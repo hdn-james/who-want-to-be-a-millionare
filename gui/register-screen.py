@@ -83,7 +83,7 @@ class UI_RegisterScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #dialog
         self.dialog = Dialog(self.centralwidget)
@@ -123,15 +123,8 @@ class UI_RegisterScreen(object):
         self.OKBtn.move(QtCore.QPoint(290, 250))
         self.OKBtn.clicked.connect(self.handleSubmitUsername)
         
-        #bar
+        #setup
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

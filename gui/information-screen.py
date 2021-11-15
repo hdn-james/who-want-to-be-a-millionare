@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QPushButton
 from widgets.Button64x64 import Button64x64
 
 url = "D:/HCMUS/Internetworking/Project/Lab1 - Socket Programming/who-want-to-be-a-millionare/gui/"
@@ -35,7 +34,7 @@ class UI_InformationScreen(object):
         self.numOfQuestions = QtWidgets.QLabel(self.centralwidget)
         self.numOfQuestions.setGeometry(QtCore.QRect(200, 150, 124, 15))
         self.numOfQuestions.setText("")
-        self.numOfQuestions.setPixmap(QtGui.QPixmap(url + "images/num_question.png"))
+        self.numOfQuestions.setPixmap(QtGui.QPixmap(url + "images/num-question.png"))
         self.numOfQuestions.setScaledContents(True)
         self.numOfQuestions.setObjectName("numOfQuestions")
         self.numOfPlayers = QtWidgets.QLabel(self.centralwidget)
@@ -96,15 +95,10 @@ class UI_InformationScreen(object):
         self.playBtn.setImage("images/play-btn.png")
         self.playBtn.move(280, 310)
         self.playBtn.setName("playBtn")
+        self.playBtn.clicked.connect(self.handleClickPlayButton)
         
+        #setup
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -120,6 +114,10 @@ class UI_InformationScreen(object):
         self.inputQuestion.setText(str(question))
         self.inputPlayer.setText(str(player))
         self.inputOrder.setText(str(order))
+        
+    def handleClickPlayButton(self):
+        print("Clicked!")
+        #move to waiting screen --> play
 
 
 if __name__ == "__main__":

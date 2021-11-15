@@ -2,7 +2,7 @@ import selectors
 import types
 import socket
 
-messages = [b'Message 1 from client.', b'Message 2 from client.']
+messages = [b'Message from client.']
 
 HOST = '127.0.0.1'  # The server's hostname or IP address
 PORT = 65432        # The port used by the server
@@ -47,7 +47,7 @@ def service_connection(key, mask):
             data.outb = data.outb[sent:]
 
 
-start_connections(HOST, PORT, 2)
+start_connections(HOST, PORT, 5)
 
 try:
     while True:

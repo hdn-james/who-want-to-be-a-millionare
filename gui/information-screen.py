@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QPushButton
 from widgets.Button64x64 import Button64x64
 
 url = "D:/HCMUS/Internetworking/Project/Lab1 - Socket Programming/who-want-to-be-a-millionare/gui/"

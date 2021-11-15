@@ -83,7 +83,7 @@ class UI_RegisterScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #dialog
         self.dialog = Dialog(self.centralwidget)

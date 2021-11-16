@@ -10,45 +10,18 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QGroupBox, QPushButton
-from widgets.Button64x64 import Button64x64
-url = "D:/HCMUS/Internetworking/Project/Lab1 - Socket Programming/who-want-to-be-a-millionare/gui/"
-        
-class BackButton(QPushButton):
-    mouseHover = QtCore.pyqtSignal(bool)
+from widgets.Button100x100 import Button100x100
+from widgets.Button35x35 import Button35x35
 
-    def __init__(self, parent=None):
-        QPushButton.__init__(self, parent)
-        self.setEnabled(True)
-        self.setMouseTracking(True)
-        self.setStyleSheet("border: none;")
-        self.setAutoFillBackground(False)
-        self.setObjectName("BackBtn")
-        self.setImage("images/back-btn.png")
-        self.setStyleSheet(''' border: none; 
-                               border-radius: 0px;
-                               background-color: transparent;  ''')
-        
-    def setImage(self, path):
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(url + path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.setIcon(icon)
-        self.setIconSize(QtCore.QSize(25, 25))
-
-    def enterEvent(self, event):
-        self.mouseHover.emit(True)
-        self.setIconSize(QtCore.QSize(23, 23))
-
-    def leaveEvent(self, event):
-        self.mouseHover.emit(False)
-        self.setIconSize(QtCore.QSize(25, 25))
-        
+url = "./who-want-to-be-a-millionare/gui/"
+                
 class Dialog(QGroupBox):
     def __init__(self, parent = None):
         QGroupBox.__init__(self, parent)
-        self.resize(200, 110)
-        self.move(220, 150)
+        self.resize(300, 150)
+        self.move(480, 300)
         self.setStyleSheet(''' border: 2px solid #FBC02D; 
-                               border-radius: 10px; 
+                               border-radius: 15px; 
                                background-color: white;''')
         self.initUI()
 
@@ -59,14 +32,15 @@ class Dialog(QGroupBox):
                                     border-radius: 0px;
                                     background-color: transparent; 
                                     padding: 5px;
+                                    font-size: 18px;
                                     font-weight: bold;
                                     color: #C58F09;''')
-        self.text.resize(200, 70)
+        self.text.resize(300, 100)
         
         #button
-        self.btn = BackButton(self)
-        self.btn.resize(25, 25)
-        self.btn.move(90, 70)
+        self.btn = Button35x35(self)
+        self.btn.setImage("images/back-btn.png")
+        self.btn.move(80, 90)
         self.btn.clicked.connect(self.handleBackButton)
         
     def setMessage(self, message):
@@ -79,7 +53,7 @@ class Dialog(QGroupBox):
 class UI_RegisterScreen(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
+        MainWindow.resize(1280, 960)
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -91,10 +65,10 @@ class UI_RegisterScreen(object):
         
         #text label
         self.textLabel = QtWidgets.QLabel(self.centralwidget)
-        self.textLabel.setGeometry(QtCore.QRect(120, 160, 400, 25))
+        self.textLabel.setGeometry(QtCore.QRect(240, 310, 400, 25))
         font = QtGui.QFont()
         font.setFamily("Cooper Black")
-        font.setPointSize(10)
+        font.setPointSize(15)
         font.setBold(False)
         font.setWeight(50)
         self.textLabel.setFont(font)
@@ -103,24 +77,24 @@ class UI_RegisterScreen(object):
         
         #input name
         self.inputName = QtWidgets.QLineEdit(self.centralwidget)
-        self.inputName.setGeometry(QtCore.QRect(110, 190, 421, 41))
+        self.inputName.setGeometry(QtCore.QRect(225, 350, 800, 50))
         self.inputName.setAutoFillBackground(False)
         self.inputName.setStyleSheet('''border: 1px solid #1F566D; 
                                         border-radius: 20px; 
                                         background-color: white; 
                                         padding-left: 10px;
                                         padding-right: 10px;
-                                        font-size: 12px;
+                                        font-size: 16px;
                                         text-transform: uppercase;
                                         font-weight: bold;
                                         color: #1F566D;''')
         self.inputName.setObjectName("inputName")
         
         #OK Button
-        self.OKBtn = Button64x64(self.centralwidget)
+        self.OKBtn = Button100x100(self.centralwidget)
         self.OKBtn.setName("OKBtn")
         self.OKBtn.setImage("images/OK-btn.png")
-        self.OKBtn.move(QtCore.QPoint(290, 250))
+        self.OKBtn.move(QtCore.QPoint(610, 450))
         self.OKBtn.clicked.connect(self.handleSubmitUsername)
         
         #setup

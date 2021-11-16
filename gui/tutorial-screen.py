@@ -10,11 +10,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from widgets.Button100x100 import Button100x100
-from widgets.RankingTable import RankingTable
 
 url = "./who-want-to-be-a-millionare/gui/"
 
-class UI_EndgameScreen(object):
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1280, 960)
@@ -24,30 +23,33 @@ class UI_EndgameScreen(object):
         self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #title
-        self.titleInformation = QtWidgets.QLabel(self.centralwidget)
-        self.titleInformation.setGeometry(QtCore.QRect(0, 50, 1280, 100))
-        self.titleInformation.setText("")
-        self.titleInformation.setPixmap(QtGui.QPixmap(url + "images/leader-board.png"))
-        self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
-        self.titleInformation.setObjectName("titleInformation")
+        self.title = QtWidgets.QLabel(self.centralwidget)
+        self.title.setGeometry(QtCore.QRect(0, 50, 1280, 100))
+        self.title.setText("")
+        self.title.setPixmap(QtGui.QPixmap(url + "images/how-to-play.png"))
+        self.title.setAlignment(QtCore.Qt.AlignCenter)
+        self.title.setObjectName("title")
         
-        #restart button
-        self.restartBtn = Button100x100(self.centralwidget)
-        self.restartBtn.setName("restartBtn")
-        self.restartBtn.setImage("images/back-btn.png")
-        self.restartBtn.move(QtCore.QPoint(500, 750))
+        #information
+        self.information = QtWidgets.QLabel(self.centralwidget)
+        self.information.setGeometry(QtCore.QRect(0, 160, 1280, 500))
+        self.information.setText("")
+        self.information.setPixmap(QtGui.QPixmap(url + "images/game-tutorial.png"))
+        self.information.setAlignment(QtCore.Qt.AlignCenter)
+        self.information.setObjectName("information")
         
-        #exitBtn
+        #play button        
+        self.playBtn = Button100x100(self.centralwidget)
+        self.playBtn.setName("playBtn")
+        self.playBtn.setImage("images/play-btn.png")
+        self.playBtn.move(QtCore.QPoint(440, 700))
+        
+        #exit button
         self.exitBtn = Button100x100(self.centralwidget)
-        self.exitBtn.setName("exitBtn")
+        self.exitBtn.setName("playBtn")
         self.exitBtn.setImage("images/exit-btn.png")
-        self.exitBtn.move(QtCore.QPoint(700, 750))
+        self.exitBtn.move(QtCore.QPoint(770, 700))
         self.exitBtn.clicked.connect(self.handleClickExit)
-        
-        #table
-        self.rankingTable = RankingTable(self.centralwidget)
-        self.rankingTable.createHeading()
-        self.rankingTable.setValue([['1', 'Nhi', '100'], ['2', 'Tan', '50'], ['3', 'Nhan', '0']])
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -67,7 +69,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = UI_EndgameScreen()
+    ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QPushButton
 
 url = "./who-want-to-be-a-millionare/gui/"
 
-class Button64x64(QPushButton):
+class Button100x100(QPushButton):
     mouseHover = QtCore.pyqtSignal(bool)
 
     def __init__(self, parent=None):
@@ -20,12 +20,12 @@ class Button64x64(QPushButton):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(url + path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setIcon(icon)
-        self.setIconSize(QtCore.QSize(64, 64))
+        self.setIconSize(QtCore.QSize(100, 100))
 
     def enterEvent(self, event):
         self.mouseHover.emit(True)
-        self.setIconSize(QtCore.QSize(60, 60))
+        self.setIconSize(QtCore.QSize(90, 90))
 
     def leaveEvent(self, event):
         self.mouseHover.emit(False)
-        self.setIconSize(QtCore.QSize(64, 64))
+        self.setIconSize(QtCore.QSize(100, 100))

@@ -9,14 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from widgets.Button64x64 import Button64x64
+from gui.widgets.Button100x100 import Button100x100
 
-url = "D:/HCMUS/Internetworking/Project/Lab1 - Socket Programming/who-want-to-be-a-millionare/gui/"
+url = "./who-want-to-be-a-millionare/gui/"
 
 class UI_InformationScreen(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
+        MainWindow.resize(1280, 960)
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -24,7 +24,7 @@ class UI_InformationScreen(object):
         
         #title
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)
-        self.titleInformation.setGeometry(QtCore.QRect(60, 60, 511, 41))
+        self.titleInformation.setGeometry(QtCore.QRect(0, 150, 1280, 100))
         self.titleInformation.setText("")
         self.titleInformation.setPixmap(QtGui.QPixmap(url + "images/match-information.png"))
         self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
@@ -32,19 +32,19 @@ class UI_InformationScreen(object):
         
         #label
         self.numOfQuestions = QtWidgets.QLabel(self.centralwidget)
-        self.numOfQuestions.setGeometry(QtCore.QRect(200, 150, 124, 15))
+        self.numOfQuestions.setGeometry(QtCore.QRect(300, 300, 396, 48))
         self.numOfQuestions.setText("")
         self.numOfQuestions.setPixmap(QtGui.QPixmap(url + "images/num-question.png"))
         self.numOfQuestions.setScaledContents(True)
         self.numOfQuestions.setObjectName("numOfQuestions")
         self.numOfPlayers = QtWidgets.QLabel(self.centralwidget)
-        self.numOfPlayers.setGeometry(QtCore.QRect(200, 200, 110, 15))
+        self.numOfPlayers.setGeometry(QtCore.QRect(300, 400, 352, 48))
         self.numOfPlayers.setText("")
         self.numOfPlayers.setPixmap(QtGui.QPixmap(url + "images/num-player.png"))
         self.numOfPlayers.setScaledContents(True)
         self.numOfPlayers.setObjectName("numOfPlayers")
         self.playerOrder = QtWidgets.QLabel(self.centralwidget)
-        self.playerOrder.setGeometry(QtCore.QRect(200, 250, 64, 15))
+        self.playerOrder.setGeometry(QtCore.QRect(300, 500, 204, 47))
         self.playerOrder.setText("")
         self.playerOrder.setPixmap(QtGui.QPixmap(url + "images/order.png"))
         self.playerOrder.setScaledContents(True)
@@ -52,10 +52,10 @@ class UI_InformationScreen(object):
         
         #input
         self.inputQuestion = QtWidgets.QLabel(self.centralwidget)
-        self.inputQuestion.setGeometry(QtCore.QRect(390, 140, 30, 25))
+        self.inputQuestion.setGeometry(QtCore.QRect(900, 300, 80, 40))
         font = QtGui.QFont()
         font.setFamily("Cooper Black")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setWeight(50)
         self.inputQuestion.setFont(font)
@@ -65,10 +65,10 @@ class UI_InformationScreen(object):
         self.inputQuestion.setObjectName("inputQuestion")
         
         self.inputPlayer = QtWidgets.QLabel(self.centralwidget)
-        self.inputPlayer.setGeometry(QtCore.QRect(390, 190, 30, 25))
+        self.inputPlayer.setGeometry(QtCore.QRect(900, 400, 80, 40))
         font = QtGui.QFont()
         font.setFamily("Cooper Black")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setWeight(50)
         self.inputPlayer.setFont(font)
@@ -78,10 +78,10 @@ class UI_InformationScreen(object):
         self.inputPlayer.setObjectName("inputPlayer")
         
         self.inputOrder = QtWidgets.QLabel(self.centralwidget)
-        self.inputOrder.setGeometry(QtCore.QRect(390, 240, 30, 25))
+        self.inputOrder.setGeometry(QtCore.QRect(900, 500, 80, 40))
         font = QtGui.QFont()
         font.setFamily("Cooper Black")
-        font.setPointSize(15)
+        font.setPointSize(25)
         font.setBold(False)
         font.setWeight(50)
         self.inputOrder.setFont(font)
@@ -91,9 +91,9 @@ class UI_InformationScreen(object):
         self.inputOrder.setObjectName("inputOrder")
         
         #play button
-        self.playBtn = Button64x64(self.centralwidget)
+        self.playBtn = Button100x100(self.centralwidget)
         self.playBtn.setImage("images/play-btn.png")
-        self.playBtn.move(280, 310)
+        self.playBtn.move(590, 600)
         self.playBtn.setName("playBtn")
         self.playBtn.clicked.connect(self.handleClickPlayButton)
         
@@ -119,13 +119,3 @@ class UI_InformationScreen(object):
         print("Clicked!")
         #move to waiting screen --> play
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = UI_InformationScreen()
-    ui.setupUi(MainWindow)
-    ui.inputNumber(30, 3, 2)
-    MainWindow.show()
-    sys.exit(app.exec_())

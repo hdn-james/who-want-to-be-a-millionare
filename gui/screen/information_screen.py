@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from widgets.Button100x100 import Button100x100
+from gui.widgets.Button100x100 import Button100x100
 
 url = "./who-want-to-be-a-millionare/gui/"
 
@@ -93,7 +93,7 @@ class UI_InformationScreen(object):
         #play button
         self.playBtn = Button100x100(self.centralwidget)
         self.playBtn.setImage("images/play-btn.png")
-        self.playBtn.move(570, 600)
+        self.playBtn.move(590, 600)
         self.playBtn.setName("playBtn")
         self.playBtn.clicked.connect(self.handleClickPlayButton)
         
@@ -119,13 +119,3 @@ class UI_InformationScreen(object):
         print("Clicked!")
         #move to waiting screen --> play
 
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = UI_InformationScreen()
-    ui.setupUi(MainWindow)
-    ui.inputNumber(30, 3, 2)
-    MainWindow.show()
-    sys.exit(app.exec_())

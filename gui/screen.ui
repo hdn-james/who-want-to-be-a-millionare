@@ -30,19 +30,19 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/how-to-play.png</pixmap>
+     <pixmap>images/question.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="playBtn">
+   <widget class="QPushButton" name="okBtn">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>700</y>
-      <width>64</width>
-      <height>64</height>
+      <x>590</x>
+      <y>690</y>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -53,20 +53,20 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>images/play-btn.png</normaloff>images/play-btn.png</iconset>
+      <normaloff>images/OK-btn.png</normaloff>images/OK-btn.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>64</width>
-      <height>64</height>
+      <width>100</width>
+      <height>100</height>
      </size>
     </property>
    </widget>
    <widget class="QPushButton" name="exitBtn">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>700</y>
+      <x>1170</x>
+      <y>30</y>
       <width>64</width>
       <height>64</height>
      </rect>
@@ -87,24 +87,159 @@
       <height>64</height>
      </size>
     </property>
+    <property name="autoRepeatDelay">
+     <number>300</number>
+    </property>
    </widget>
-   <widget class="QLabel" name="titleInformation_2">
+   <widget class="QPushButton" name="passBtn">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>150</y>
-      <width>1280</width>
-      <height>500</height>
+      <x>1080</x>
+      <y>30</y>
+      <width>64</width>
+      <height>64</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>images/pass-btn.png</normaloff>images/pass-btn.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>300</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="question">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>170</y>
+      <width>691</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="chooseA">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>480</y>
+      <width>481</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="chooseA_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>590</y>
+      <width>481</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="chooseA_3">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>480</y>
+      <width>481</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="chooseA_4">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>590</y>
+      <width>481</width>
+      <height>61</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="score">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>100</width>
+      <height>42</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/game-tutorial.png</pixmap>
+     <pixmap>images/score.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="inputScore">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>101</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>23</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent; color: #FBC02D; border: none;</string>
+    </property>
+    <property name="text">
+     <string>100</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="countdownTimer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>221</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid #62D31A; color: #62D31A; border-radius: 10px;</string>
+    </property>
+    <property name="maximum">
+     <number>60</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

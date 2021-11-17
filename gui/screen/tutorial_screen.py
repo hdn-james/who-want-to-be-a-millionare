@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from widgets.Button100x100 import Button100x100
+from gui.widgets.Button100x100 import Button100x100
 
 url = "./who-want-to-be-a-millionare/gui/"
 
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.exitBtn.setName("playBtn")
         self.exitBtn.setImage("images/exit-btn.png")
         self.exitBtn.move(QtCore.QPoint(770, 700))
-        self.exitBtn.clicked.connect(self.handleClickExit)
+        self.exitBtn.clicked.connect(lambda: self.handleClickExit(MainWindow))
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -61,15 +61,5 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         
-    def handleClickExit(self):
+    def handleClickExit(self, MainWindow):
         MainWindow.close()
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

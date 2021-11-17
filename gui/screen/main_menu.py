@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtWidgets, QtGui
-from widgets.Button248x64 import Button248x64
+from gui.widgets.Button248x64 import Button248x64
 
 class UI_MainMenu(object):
     def setupUi(self, MainWindow):
@@ -55,7 +55,7 @@ class UI_MainMenu(object):
         self.exitBtn.setGeometry(QtCore.QRect(750, 680, 248, 64))
         self.exitBtn.setName("exitBtn")
         self.exitBtn.setImage("images/exit-button.png")
-        self.exitBtn.clicked.connect(self.handleClickExit)
+        self.exitBtn.clicked.connect(lambda: self.handleClickExit(MainWindow))
         
        #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -76,15 +76,6 @@ class UI_MainMenu(object):
     def handleClickTutorial(self):
         print("Clicked Tutorial Button")
         
-    def handleClickExit(self):
+    def handleClickExit(self, MainWindow):
         MainWindow.close()
    
-    
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = UI_MainMenu()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

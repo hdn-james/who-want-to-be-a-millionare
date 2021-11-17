@@ -10,8 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QGroupBox, QPushButton
-from widgets.Button100x100 import Button100x100
-from widgets.Button35x35 import Button35x35
+from gui.widgets.Button100x100 import Button100x100
+from gui.widgets.Button35x35 import Button35x35
 
 url = "./who-want-to-be-a-millionare/gui/"
                 
@@ -116,13 +116,3 @@ class UI_RegisterScreen(object):
         self.dialog.show()
         self.dialog.activateWindow()
         self.dialog.raise_()
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = UI_RegisterScreen()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

@@ -19,7 +19,7 @@ class UI_EndgameScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #sself.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #title
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)

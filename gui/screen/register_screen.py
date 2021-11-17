@@ -9,46 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QGroupBox, QPushButton
 from gui.widgets.Button100x100 import Button100x100
-from gui.widgets.Button35x35 import Button35x35
+from gui.widgets.DialogFailUsername import DialogFailUsername
 
-url = "./who-want-to-be-a-millionare/gui/"
-                
-class Dialog(QGroupBox):
-    def __init__(self, parent = None):
-        QGroupBox.__init__(self, parent)
-        self.resize(300, 150)
-        self.move(480, 300)
-        self.setStyleSheet(''' border: 2px solid #FBC02D; 
-                               border-radius: 15px; 
-                               background-color: white;''')
-        self.initUI()
-
-    def initUI(self):
-        #message
-        self.text = QtWidgets.QTextBrowser(self)
-        self.text.setStyleSheet(''' border: none; 
-                                    border-radius: 0px;
-                                    background-color: transparent; 
-                                    padding: 5px;
-                                    font-size: 18px;
-                                    font-weight: bold;
-                                    color: #C58F09;''')
-        self.text.resize(300, 100)
-        
-        #button
-        self.btn = Button35x35(self)
-        self.btn.setImage("images/back-btn.png")
-        self.btn.move(80, 90)
-        self.btn.clicked.connect(self.handleBackButton)
-        
-    def setMessage(self, message):
-        self.text.setText(message)
-        
-    def handleBackButton(self):
-        self.hide()
-        
+url = "./who-want-to-be-a-millionare/gui/"     
 
 class UI_RegisterScreen(object):
     def setupUi(self, MainWindow):
@@ -57,10 +21,10 @@ class UI_RegisterScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #dialog
-        self.dialog = Dialog(self.centralwidget)
+        self.dialog = DialogFailUsername(self.centralwidget)
         self.dialog.hide()
         
         #text label
@@ -94,7 +58,7 @@ class UI_RegisterScreen(object):
         self.OKBtn = Button100x100(self.centralwidget)
         self.OKBtn.setName("OKBtn")
         self.OKBtn.setImage("images/OK-btn.png")
-        self.OKBtn.move(QtCore.QPoint(610, 450))
+        self.OKBtn.move(QtCore.QPoint(590, 450))
         self.OKBtn.clicked.connect(self.handleSubmitUsername)
         
         #setup

@@ -17,7 +17,7 @@ class UI_MainMenu(object):
         MainWindow.resize(1280, 960)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #game-name
         self.gameName = QtWidgets.QLabel(self.centralwidget)

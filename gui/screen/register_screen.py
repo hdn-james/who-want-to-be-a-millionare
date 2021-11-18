@@ -59,7 +59,7 @@ class UI_RegisterScreen(object):
         self.OKBtn.setName("OKBtn")
         self.OKBtn.setImage("images/OK-btn.png")
         self.OKBtn.move(QtCore.QPoint(590, 450))
-        self.OKBtn.clicked.connect(self.handleSubmitUsername)
+        self.OKBtn.clicked.connect(lambda: self.handleSubmitUsername(MainWindow))
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -72,11 +72,15 @@ class UI_RegisterScreen(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.textLabel.setText(_translate("MainWindow", "ENTER YOUR USERNAME"))
         
-    def handleSubmitUsername(self):
+    def handleSubmitUsername(self, MainWindow):
         username = self.inputName.text()
         print(username)
         #check username
-        self.dialog.setMessage("Username has been already registered. \nPlease choose another one")
-        self.dialog.show()
-        self.dialog.activateWindow()
-        self.dialog.raise_()
+        #self.dialog.setMessage("Username has been already registered. \nPlease choose another one")
+        #self.dialog.show()
+        #self.dialog.activateWindow()
+        #self.dialog.raise_()
+    
+        #ui = UI_LoadingScreen()
+        #ui.setupUi(MainWindow)
+        #MainWindow.show()

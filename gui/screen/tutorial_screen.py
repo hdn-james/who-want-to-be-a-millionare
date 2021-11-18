@@ -10,10 +10,11 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
+import gui.screen
 
 url = "./who-want-to-be-a-millionare/gui/"
 
-class Ui_MainWindow(object):
+class UI_TutorialScreen(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1280, 960)
@@ -43,13 +44,14 @@ class Ui_MainWindow(object):
         self.playBtn.setName("playBtn")
         self.playBtn.setImage("images/play-btn.png")
         self.playBtn.move(QtCore.QPoint(440, 700))
+        self.playBtn.clicked.connect(lambda: self.handleClickPlayButton(MainWindow))
         
         #exit button
         self.exitBtn = Button100x100(self.centralwidget)
         self.exitBtn.setName("playBtn")
         self.exitBtn.setImage("images/exit-btn.png")
         self.exitBtn.move(QtCore.QPoint(770, 700))
-        self.exitBtn.clicked.connect(lambda: self.handleClickExit(MainWindow))
+        self.exitBtn.clicked.connect(lambda: self.handleClickExitButton(MainWindow))
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -61,5 +63,10 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         
-    def handleClickExit(self, MainWindow):
+    def handleClickExitButton(self, MainWindow):
         MainWindow.close()
+        
+    def handleClickPlayButton(self, MainWindow):
+        ui = gui.screen.UI_MainMenu()
+        ui.setupUi(MainWindow)
+        MainWindow.show()

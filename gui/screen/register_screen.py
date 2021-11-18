@@ -9,46 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QGroupBox, QPushButton
 from gui.widgets.Button100x100 import Button100x100
-from gui.widgets.Button35x35 import Button35x35
+from gui.widgets.DialogFailUsername import DialogFailUsername
+from server.utils.username import checkUsername
+import gui.screen
 
-url = "./who-want-to-be-a-millionare/gui/"
-                
-class Dialog(QGroupBox):
-    def __init__(self, parent = None):
-        QGroupBox.__init__(self, parent)
-        self.resize(300, 150)
-        self.move(480, 300)
-        self.setStyleSheet(''' border: 2px solid #FBC02D; 
-                               border-radius: 15px; 
-                               background-color: white;''')
-        self.initUI()
-
-    def initUI(self):
-        #message
-        self.text = QtWidgets.QTextBrowser(self)
-        self.text.setStyleSheet(''' border: none; 
-                                    border-radius: 0px;
-                                    background-color: transparent; 
-                                    padding: 5px;
-                                    font-size: 18px;
-                                    font-weight: bold;
-                                    color: #C58F09;''')
-        self.text.resize(300, 100)
-        
-        #button
-        self.btn = Button35x35(self)
-        self.btn.setImage("images/back-btn.png")
-        self.btn.move(80, 90)
-        self.btn.clicked.connect(self.handleBackButton)
-        
-    def setMessage(self, message):
-        self.text.setText(message)
-        
-    def handleBackButton(self):
-        self.hide()
-        
+url = "./who-want-to-be-a-millionare/gui/"     
 
 class UI_RegisterScreen(object):
     def setupUi(self, MainWindow):
@@ -57,10 +23,10 @@ class UI_RegisterScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #dialog
-        self.dialog = Dialog(self.centralwidget)
+        self.dialog = DialogFailUsername(self.centralwidget)
         self.dialog.hide()
         
         #text label
@@ -85,7 +51,6 @@ class UI_RegisterScreen(object):
                                         padding-left: 10px;
                                         padding-right: 10px;
                                         font-size: 16px;
-                                        text-transform: uppercase;
                                         font-weight: bold;
                                         color: #1F566D;''')
         self.inputName.setObjectName("inputName")
@@ -94,8 +59,8 @@ class UI_RegisterScreen(object):
         self.OKBtn = Button100x100(self.centralwidget)
         self.OKBtn.setName("OKBtn")
         self.OKBtn.setImage("images/OK-btn.png")
-        self.OKBtn.move(QtCore.QPoint(610, 450))
-        self.OKBtn.clicked.connect(self.handleSubmitUsername)
+        self.OKBtn.move(QtCore.QPoint(590, 450))
+        self.OKBtn.clicked.connect(lambda: self.handleSubmitUsername(MainWindow))
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
@@ -108,11 +73,16 @@ class UI_RegisterScreen(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.textLabel.setText(_translate("MainWindow", "ENTER YOUR USERNAME"))
         
-    def handleSubmitUsername(self):
+    def handleSubmitUsername(self, MainWindow):
         username = self.inputName.text()
-        print(username)
         #check username
-        self.dialog.setMessage("Username has been already registered. \nPlease choose another one")
-        self.dialog.show()
-        self.dialog.activateWindow()
-        self.dialog.raise_()
+        err = checkUsername(name=username)
+        if err:
+            self.dialog.setMessage(err)
+            self.dialog.show()
+            self.dialog.activateWindow()
+            self.dialog.raise_()
+    
+        ui = gui.screen.UI_LoadingScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()

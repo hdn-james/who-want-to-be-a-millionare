@@ -10,8 +10,7 @@
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from gui.widgets.Button248x64 import Button248x64
-from gui.screen.register_screen import UI_RegisterScreen
-from gui.screen.tutorial_screen import UI_TutorialScreen
+import gui.screen
 
 class UI_MainMenu(object):
     def setupUi(self, MainWindow):
@@ -70,7 +69,7 @@ class UI_MainMenu(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         
     def handleClickStart(self, MainWindow):
-        ui = UI_RegisterScreen()
+        ui = gui.screen.UI_RegisterScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
         
@@ -78,7 +77,7 @@ class UI_MainMenu(object):
         print("Clicked Settings Button")
         
     def handleClickTutorial(self, MainWindow):
-        ui = UI_TutorialScreen()
+        ui = gui.screen.UI_TutorialScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
         

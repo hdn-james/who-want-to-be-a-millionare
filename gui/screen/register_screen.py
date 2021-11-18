@@ -11,6 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.DialogFailUsername import DialogFailUsername
+from server.utils.username import checkUsername
+import gui.screen
 
 url = "./who-want-to-be-a-millionare/gui/"     
 
@@ -49,7 +51,6 @@ class UI_RegisterScreen(object):
                                         padding-left: 10px;
                                         padding-right: 10px;
                                         font-size: 16px;
-                                        text-transform: uppercase;
                                         font-weight: bold;
                                         color: #1F566D;''')
         self.inputName.setObjectName("inputName")
@@ -74,13 +75,14 @@ class UI_RegisterScreen(object):
         
     def handleSubmitUsername(self, MainWindow):
         username = self.inputName.text()
-        print(username)
         #check username
-        #self.dialog.setMessage("Username has been already registered. \nPlease choose another one")
-        #self.dialog.show()
-        #self.dialog.activateWindow()
-        #self.dialog.raise_()
+        err = checkUsername(name=username)
+        if err:
+            self.dialog.setMessage(err)
+            self.dialog.show()
+            self.dialog.activateWindow()
+            self.dialog.raise_()
     
-        #ui = UI_LoadingScreen()
-        #ui.setupUi(MainWindow)
-        #MainWindow.show()
+        ui = gui.screen.UI_LoadingScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()

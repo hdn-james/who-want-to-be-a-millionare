@@ -10,8 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
-
-from gui.screen.main_menu import UI_MainMenu
+import gui.screen
 
 url = "./who-want-to-be-a-millionare/gui/"
 
@@ -68,6 +67,6 @@ class UI_TutorialScreen(object):
         MainWindow.close()
         
     def handleClickPlayButton(self, MainWindow):
-        ui = UI_MainMenu()
+        ui = gui.screen.UI_MainMenu()
         ui.setupUi(MainWindow)
         MainWindow.show()

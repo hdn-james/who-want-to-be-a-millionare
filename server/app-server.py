@@ -1,19 +1,14 @@
 import selectors
 import types
 import socket
+import json
+import random
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 65432        # The port used by the server
-sel = selectors.DefaultSelector()
-
-lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-lsock.bind((HOST, PORT))
-lsock.listen()
-print("Listening on", (HOST, PORT))
-lsock.setblocking(False)
-
-sel.register(lsock, selectors.EVENT_READ, data=None)
-
+def load_question(path):
+    f = open(path, "r")
+    questions = json.load(f)
+    f.close()
+    return questions
 
 def accept_connection(socket):
     connection, address = socket.accept()
@@ -22,7 +17,6 @@ def accept_connection(socket):
     data = types.SimpleNamespace(addr=address, inb=b'', outb=b'')
     events = selectors.EVENT_READ | selectors.EVENT_WRITE
     sel.register(connection, events, data=data)
-
 
 def service_connection(key, mask):
     sock = key.fileobj
@@ -40,6 +34,20 @@ def service_connection(key, mask):
             print('echoing',repr(data.outb), 'to', data.addr)
             sent = sock.send(data.outb) # reading to write
             data.outb = data.outb[sent:]
+            
+questions = load_question("./server/lib/questions.json")
+
+HOST = '127.0.0.1'  # The server's hostname or IP address
+PORT = 65432        # The port used by the server
+sel = selectors.DefaultSelector()
+
+lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+lsock.bind((HOST, PORT))
+lsock.listen()
+print("Listening on", (HOST, PORT))
+lsock.setblocking(False)
+
+sel.register(lsock, selectors.EVENT_READ, data=None)
 
 while True:
     events = sel.select(timeout=None)

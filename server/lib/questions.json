@@ -1,607 +1,607 @@
 [
     {
         "question": "A calf is the young of which animal?",
-        "answer": "Cow",
+        "ans": "Cow",
         "fake": ["Cat", "Goat", "Gorilla"]
     },
     {
         "question": "A computer-game hero is Sonic the what?",
-        "answer": "Hedgehog",
+        "ans": "Hedgehog",
         "fake": ["Polecat", "Aardvark", "Muskrat"]
     },
     {
         "question": "A hare in which month is said to be mad?",
-        "answer": "March",
+        "ans": "March",
         "fake": ["July", "April", "August"]
     },
     {
         "question": "According to legend what was Merlin’s job at King Arthur’s court?",
-        "answer": "Wizard",
+        "ans": "Wizard",
         "fake": ["Archer", "Assassin", "Warrior"]
     },
     {
         "question": "According to legend where was King Arthur’s court?",
-        "answer": "Camelot",
+        "ans": "Camelot",
         "fake": ["Caerleon", "Winchester", "Tintagel Castle"]
     },
     {
         "question": "According to legend which flower is named after a boy accidentally killed by the god Apollo?",
-        "answer": "Hyacinth",
+        "ans": "Hyacinth",
         "fake": ["Alyssum", "Iris", "Azalea"]
     },
     {
         "question": "According to the Bible, who was the first woman?",
-        "answer": "Eva",
+        "ans": "Eva",
         "fake": ["Eve", "Evita", "Evie"]
     },
     {
         "question": "According to the proverb, what 'keeps the doctor away'?",
-        "answer": "Apple a day",
+        "ans": "Apple a day",
         "fake": ["Melon a week", "Orange a month", "Banana a year"]
     },
     {
         "question": "Admiral is a rank in which branch of the armed forces?",
-        "answer": "Navy",
+        "ans": "Navy",
         "fake": ["Army", "Marine Corps", "Air Force"]
     },
     {
         "question": "All signals are directed through what circuit board in a minicomputer?",
-        "answer": "Motherboard",
+        "ans": "Motherboard",
         "fake": ["Fatherboard", "Brotherboard", "Daughterboard"]
     },
     {
         "question": "American engineer Henry Ford was most associated with which form of transport?",
-        "answer": "Car",
+        "ans": "Car",
         "fake": ["Train", "Ship", "Air plane"]
     },
     {
         "question": "An achievement to be proud of is a ' ... in one's cap'?",
-        "answer": "Feather",
+        "ans": "Feather",
         "fake": ["Quill", "Wing", "Plume"]
     },
     {
         "question": "The phrase, 'Shedding Crocodile tears' means ...",
-        "answer": "Insincere display of emotions",
+        "ans": "Insincere display of emotions",
         "fake": ["Be in trouble", "Be nervous", "Find the hidden meaning"]
     },
     {
         "question": "The phrase, 'Fall on deaf ears’ means ...?",
-        "answer": "People would not listen to",
+        "ans": "People would not listen to",
         "fake": ["Cannot remember", "To be in trouble", "Find the hidden meaning"]
     },
     {
         "question": "The phrase, 'A hard nut to crack' means ...?",
-        "answer": "A difficult problem",
+        "ans": "A difficult problem",
         "fake": ["An interesting problem", "A unique problem", "A simple problem"]
     },
     {
         "question": "'Ram sold their house because it was a real white elephant'. The phrase, 'real white elephant' means ...?",
-        "answer": "Very expensive and useless",
+        "ans": "Very expensive and useless",
         "fake": ["A rare find", "A very big one", "A useless one"]
     },
     {
         "question": "'A stich in time saves ....'",
-        "answer": "Nine",
+        "ans": "Nine",
         "fake": ["Six", "Four", "Seven"]
     },
     {
         "question": "The phrase, 'A change of heart' means ...",
-        "answer": "Change your opinion about someone or something",
+        "ans": "Change your opinion about someone or something",
         "fake": [" Find the hidden meaning", "Say what you really mean", "Pretend to be upset"]
     },
     {
         "question": "A phrase which expresses 'Something that is very common, not unique'",
-        "answer": "A dime a dozen",
+        "ans": "A dime a dozen",
         "fake": ["Bite the bullet", "Don't judge a book by its cover", "Biting off more than you can chew"]
     },
     {
         "question": "A phrase which expresses 'The elephant in the room'",
-        "answer": "An issue, person, or problem that someone is trying to avoid",
+        "ans": "An issue, person, or problem that someone is trying to avoid",
         "fake": ["To fail in a spectacular manner", "Joking with someone", "Reading or hearing something from the source"]
     },
     {
         "question": "The phrase, 'In the same boat' means  ...",
-        "answer": "Be in the same position",
+        "ans": "Be in the same position",
         "fake": ["Try and do something", "Live in the same town", "Say what it literally means"]
     },
     {
         "question": "The phrase, 'once in a blue moon' means  ...",
-        "answer": "Happening only rarely",
+        "ans": "Happening only rarely",
         "fake": ["Making up for lost time", "Always being late", "In a very roundabout way"]
     },
     {
         "question": "'Life is not a bed of roses'. The phrase, 'a bed of roses' means ...?",
-        "answer": "Something which is easy",
+        "ans": "Something which is easy",
         "fake": ["Something which is interesting", "Something which is beautiful", "Something which is very large"]
     },
     {
         "question": "The phrase, 'to die in harness' means  ...",
-        "answer": "To die while on duty",
+        "ans": "To die while on duty",
         "fake": ["To die early", "To die under duress", "To die peacefully"]
     },
     {
         "question": "What is the meaning of the term: 'black sheep'?",
-        "answer": "A disgraceful person",
+        "ans": "A disgraceful person",
         "fake": ["A graceful person", "A foolish person", "A gentleman"]
     },
     {
         "question": "The phrase, 'get ducks in a row' means  ...",
-        "answer": "Well organized",
+        "ans": "Well organized",
         "fake": ["Jumble", "Un co-ordinated", "Heller – sketter"]
     },
     {
         "question": "The phrase, 'giving the cold shoulder' means  ...",
-        "answer": "Ignore someone",
+        "ans": "Ignore someone",
         "fake": ["Be nervous", "Having the full attention", "Would not listen to something"]
     },
     {
         "question": "The phrase, 'beating around the Bush' means  ...",
-        "answer": "To speak in a roundabout indirect way",
+        "ans": "To speak in a roundabout indirect way",
         "fake": ["To talk softly and clearly", "To speak the truth", "To speak in an unnatural way"]
     },
     {
         "question": "The phrase, 'read between the lines' means  ...",
-        "answer": "Finding meanings that are intended, but that are not directly expressed",
+        "ans": "Finding meanings that are intended, but that are not directly expressed",
         "fake": ["You have my full attention", "Say what you really feel", "Pretend to be upset"]
     },
     {
         "question": "The phrase, 'in the nick of time' means  ...",
-        "answer": "Just at the last moment",
+        "ans": "Just at the last moment",
         "fake": ["At the start moment", "At the middle moment", "At the present moment"]
     },
     {
         "question": "The phrase, 'marked with superiority' means  ...",
-        "answer": "Outstanding",
+        "ans": "Outstanding",
         "fake": ["Egoistic", "Inferiority", "Pending"]
     },
     {
         "question": "The phrase, 'plain as day' means  ...",
-        "answer": "Easy to understand",
+        "ans": "Easy to understand",
         "fake": ["Being out of your depth or comfort zone in a situation", "To be of advantage to someone", "In state of extreme happiness"]
     },
     {
         "question": "The phrase, 'break a leg' means  ...",
-        "answer": "Good luck",
+        "ans": "Good luck",
         "fake": ["Bad luck", "Misfortune", "To ignore someone"]
     },
     {
         "question": "The phrase, 'hear it on the grape vine' means  ...",
-        "answer": "Rumour",
+        "ans": "Rumour",
         "fake": ["Testimony", "Proof", "Audition"]
     },
     {
         "question": "The phrase, 'in dire straits' means  ...",
-        "answer": "Indigence",
+        "ans": "Indigence",
         "fake": ["Good fortune", "Providence", "Extremely happy"]
     },
     {
         "question": "The phrase, 'under the weather' means  ...",
-        "answer": "Feeling sick",
+        "ans": "Feeling sick",
         "fake": ["Worrying that something bad may happen", "Having more energy on colder days", "Being willing to accept risks"]
     },
     {
         "question": "The phrase, 'when pigs fly' means  ...",
-        "answer": "Highly unlikely to happen",
+        "ans": "Highly unlikely to happen",
         "fake": ["Very imaginative", "Nothing like it should have been", "Random or unpredictable outcome"]
     },
     {
         "question": "The phrase, 'to be a piece of cake' means  ...",
-        "answer": "Something that is very easy",
+        "ans": "Something that is very easy",
         "fake": ["To refer to something that is pleasant to hear", "To refer to a wedge-shaped object", "Something that looks nice but is bad for health"]
     },
     {
         "question": "The phrase, 'hit the hay' means  ...",
-        "answer": "To go to bed in order to sleep",
+        "ans": "To go to bed in order to sleep",
         "fake": ["To end in failure", "To fall so that your body hits the ground heavily", "To love your work"]
     },
     {
         "question": "The phrase, 'have butterflies in one’s stomach' means  ...",
-        "answer": "To be nervous",
+        "ans": "To be nervous",
         "fake": ["To do a job in a rushed manner", "To be so angry that your stomach feels tense", "To have a stomach illness"]
     },
     {
         "question": "The phrase, 'let your hair down' means  ...",
-        "answer": "Start to relax and enjoy oneself freely",
+        "ans": "Start to relax and enjoy oneself freely",
         "fake": ["Become sloppy", "Change one’s appearance", "Show one’s true nature to others"]
     },
     {
         "question": "The phrase, 'to touch base' means  ...",
-        "answer": "Renew contact with someone or something",
+        "ans": "Renew contact with someone or something",
         "fake": ["Go back to the original place", "Analyse the problem and find the root cause", "Start from the basics"]
     },
     {
         "question": "The phrase, 'pull someone's leg' means  ...",
-        "answer": "To trick someone in a playful way",
+        "ans": "To trick someone in a playful way",
         "fake": ["To tell someone to take longer steps", "To try and get someone’s attention quickly", "To be rude to someone by saying something hurtful"]
     },
     {
         "question": "'We talked over the matter for an hour but without any result'. The phrase, 'talked over' means  ...",
-        "answer": "Discussed",
+        "ans": "Discussed",
         "fake": ["Fought about", "Surveyed", "Assessed"]
     },
     {
         "question": "'He was murdered in cold blood'. The phrase, 'cold blood' means  ...",
-        "answer": "Unfeelingly",
+        "ans": "Unfeelingly",
         "fake": ["Thoughtlessly", "Coolly", "Deliberately"]
     },
     {
         "question": "'Suganya stood by her husband in weal and woe'. The phrase, 'weal and woe' means  ...",
-        "answer": "In prosperity and adversity",
+        "ans": "In prosperity and adversity",
         "fake": ["During the operation", "During illness", "By hook or crook"]
     },
     {
         "question": "'I have a bone to pick with you in this matter.'. The phrase, 'have a bone to pick' means  ...",
-        "answer": "To be disagree/annoyed",
+        "ans": "To be disagree/annoyed",
         "fake": ["Desire", "Selfish motive", "Selfless motive"]
     },
     {
         "question": "'The inspector was caught red handed'. The phrase, 'red handed' means  ...",
-        "answer": "Caught in the act of committing the crime",
+        "ans": "Caught in the act of committing the crime",
         "fake": ["Found with hands tied", "Caught with dirty hands", "Quickly"]
     },
     {
         "question": "The phrase, 'be down in the dumps' means  ...",
-        "answer": "Appear miserable",
+        "ans": "Appear miserable",
         "fake": ["Ever ready to take on", "To fall down", "To fall from grace"]
     },
     {
         "question": "The phrase, 'a pipe dream' means  ...",
-        "answer": "A hope or plan that will never come true",
+        "ans": "A hope or plan that will never come true",
         "fake": ["A nightmare", "An unending dream", "A day dream"]
     },
     {
         "question": "The phrase, 'the green eyed monster' means  ...",
-        "answer": "Personal jealousy",
+        "ans": "Personal jealousy",
         "fake": ["To get into trouble", "The creature of the sea", "An animal with green eyes"]
     },
     {
         "question": "The phrase, 'a pyrrhic victory' means  ...",
-        "answer": "A victory that brings more loss than gains",
+        "ans": "A victory that brings more loss than gains",
         "fake": ["A quid pro quo", "Devastating victory", "A victory which is not possible"]
     },
     {
         "question": "'I am sure they will fight tooth and nail for their rights'. The phrase, 'tooth and nail' means  ...",
-        "answer": "With all their might",
+        "ans": "With all their might",
         "fake": ["Very cowardly", "Without any weapon", "With all their rights"]
     },
     {
         "question": "The phrase, 'face the music' means  ...",
-        "answer": "Get reprimanded",
+        "ans": "Get reprimanded",
         "fake": ["Listen to the music", "Feel sorry", "Get finished"]
     },
     {
         "question": "The phrase, 'play it safe' means  ...",
-        "answer": "Avoid risks",
+        "ans": "Avoid risks",
         "fake": ["Play for pleasure", "Play light games", "Play a game peacefully"]
     },
     {
         "question": "The phrase, 'plain speaking' means  ...",
-        "answer": "Telling the truth",
+        "ans": "Telling the truth",
         "fake": ["Revealing the secret", "Spilling the beans", "Telling nonsense"]
     },
     {
         "question": "The phrase, 'be to the fore' means  ...",
-        "answer": "Be prominent",
+        "ans": "Be prominent",
         "fake": ["To take the lead", "To the brim", "Pre-apprehension"]
     },
     {
         "question": "The phrase, 'to be at the zenith of' means  ...",
-        "answer": "To be at the peak of",
+        "ans": "To be at the peak of",
         "fake": ["To face difficulty boldly", "To die an immature death", "To be succumbed to, one’s flattery"]
     },
     {
         "question": "The phrase, 'to keep one’s temper' means  ...",
-        "answer": "To be in a good mood",
+        "ans": "To be in a good mood",
         "fake": ["To be aloof from", "To preserve one’s energy", "To become angry"]
     },
     {
         "question": "The phrase, 'to pick holes' means  ...",
-        "answer": "To criticize someone",
+        "ans": "To criticize someone",
         "fake": ["To cut some part of an item", "To destroy something", "To find some reason to fight"]
     },
     {
         "question": "The phrase, 'cut the mustard' means  ...",
-        "answer": "To come up to expectations",
+        "ans": "To come up to expectations",
         "fake": ["To leave the job", "To get injured", "To lose"]
     },
     {
         "question": "The phrase, 'let the grass grow under one’s feet' means  ...",
-        "answer": "To remain idle",
+        "ans": "To remain idle",
         "fake": ["To be trifled with", "To engage in useless talk", "To accept responsibility"]
     },
     {
         "question": "The phrase, 'plough a lone furrow' means  ...",
-        "answer": "To play the card to win",
+        "ans": "To play the card to win",
         "fake": ["Do something that achieves the desired success", "To play the last card", "To play the best card"]
     },
     {
         "question": "The phrase, 'far cry from' means  ...",
-        "answer": "Very different from",
+        "ans": "Very different from",
         "fake": ["To approach silently", "To leave silently", "To come from far"]
     },
     {
         "question": "The phrase, 'beatin/flogging a dead horse' means  ...",
-        "answer": "Wasting time in useless effort",
+        "ans": "Wasting time in useless effort",
         "fake": ["Repeating our request", "Beating about the bush", "Making one see reason"]
     },
     {
         "question": "'The bare bones of the conversion had been that he hated my guts'. The phrase, 'bare bones' means  ...",
-        "answer": "The main point",
+        "ans": "The main point",
         "fake": ["The detailed analysis", "Just bones", "The naked truth"]
     },
     {
         "question": "The phrase, 'under a cloud' means  ...",
-        "answer": "Under suspicion",
+        "ans": "Under suspicion",
         "fake": ["Under observation", "Experiencing cloudy weather", "Enjoying favourable luck"]
     },
     {
         "question": "The phrase, 'play all one's cards' means  ...",
-        "answer": "Use every means in one’s power",
+        "ans": "Use every means in one’s power",
         "fake": ["A game of cards", "An ineffective card game", "Losing the last penny in gambling"]
     },
     {
         "question": "The phrase, 'be out of the blue' means  ...",
-        "answer": "Suddenly",
+        "ans": "Suddenly",
         "fake": ["Come out of gloom", "Euphoria", "Lighting"]
     },
     {
         "question": "The phrase, 'put a spoke in one's wheel' means  ...",
-        "answer": "Obstruct someone's progress",
+        "ans": "Obstruct someone's progress",
         "fake": ["Help someone with advice", "Help someone to progress", "Grinder"]
     },
     {
         "question": "The phrase, 'to have a screw loose' means  ...",
-        "answer": "Be disturbed or slightly mad",
+        "ans": "Be disturbed or slightly mad",
         "fake": ["Be screw less", "Be delightful", "Accept a defective item"]
     },
     {
         "question": "'Truly he is a chip of the old block'. The phrase, 'a chip of the old block' means  ...",
-        "answer": "Very similar to his father or mother",
+        "ans": "Very similar to his father or mother",
         "fake": ["A good actor", "Outdated in his mannerisms", "An honorable man"]
     },
     {
         "question": "The phrase, 'A quid pro quo' means  ...",
-        "answer": "Something done in revenge or retaliation",
+        "ans": "Something done in revenge or retaliation",
         "fake": ["Selfish act of revenge", "Selfless service", "Give up"]
     },
     {
         "question": "'The project looks to be in apple pie order'. The phrase, 'in apple pie order' means  ...",
-        "answer": "Perfectly neat and tidy",
+        "ans": "Perfectly neat and tidy",
         "fake": ["Beautiful decorated", "Dirty job", "Having apple pie in the order"]
     },
     {
         "question": "'While I have a bath, you may chew the cud'. The phrase, 'chew the cud' means  ...",
-        "answer": "Reflect upon one’s past",
+        "ans": "Reflect upon one’s past",
         "fake": ["Kill time", "Go through legalities", "Have breakfast"]
     },
     {
         "question": "'In the beginning of his career, he was practically rolling in money'. The phrase, 'rolling in money' means  ...",
-        "answer": "Very rich",
+        "ans": "Very rich",
         "fake": ["Saved lot of money", "Wasting a lot of money", "Spending more than his earnings"]
     },
     {
         "question": "'He never wanted to keep her under his thumb and so he let her do what she liked'. The phrase, 'keep her under his thumb' means  ...",
-        "answer": "Unduly under control",
+        "ans": "Unduly under control",
         "fake": ["In his presence all the time", "Below his thumb", "Inferior"]
     },
     {
         "question": "'One should not stay idle at home; but be up and doing'. The phrase, 'to be up and doing' means  ...",
-        "answer": "Active",
+        "ans": "Active",
         "fake": ["Sleeping", "Reading", "Working"]
     },
     {
         "question": "'The cashier wiped the nose of his employer by presenting false bills'. The phrase, 'wiped the nose of' means  ...",
-        "answer": "Cheated",
+        "ans": "Cheated",
         "fake": ["Doomed", "Abused", "Slapped"]
     },
     {
         "question": "'The captain played with determination because the honour of the team was at stake'. The phrase, 'at stake' means  ...",
-        "answer": "In danger",
+        "ans": "In danger",
         "fake": ["At the top", "Appropriate", "Very low"]
     },
     {
         "question": "'The CBI officials followed up the clue, but it proved to be a mare's nest'. The phrase, 'mare's nest' means  ...",
-        "answer": "An unfound rumour",
+        "ans": "An unfound rumour",
         "fake": ["Baseless", "Time consuming", "Useless"]
     },
     {
         "question": "'We are afraid that you may be led astray in Arvind’s bad company'. The phrase, 'led astray' means  ...",
-        "answer": "Misguided",
+        "ans": "Misguided",
         "fake": ["Lose the job", "Killed", "Get into trouble"]
     },
     {
         "question": "'An honest person never plays fast and loose with his friends'. The phrase, 'fast and loose' means  ...",
-        "answer": "To be inconsistent",
+        "ans": "To be inconsistent",
         "fake": ["Delay tactics", "Deceives", "Ignores"]
     },
     {
         "question": "People used to say Uncle Charlie was a queer fish because he ...",
-        "answer": "Talked to himself",
+        "ans": "Talked to himself",
         "fake": ["Didn't like fishing", "Loved swimming", "Loved fishes"]
     },
     {
         "question": "Ollie said he had a whale of a time at the jazz festival and he ...",
-        "answer": "Wants to go again next year",
+        "ans": "Wants to go again next year",
         "fake": ["Wishes he hadn't gone", "Probably won't bother going again", "Tells his friends not to go"]
     },
     {
         "question": "The investigators knew that examining the company's books might open a can of worms. They suspected there'd be ...",
-        "answer": "Evidence of serious crimes",
+        "ans": "Evidence of serious crimes",
         "fake": ["A huge number of worms", "Nothing seriously wrong", "Many cans containing worms"]
     },
     {
         "question": "The chickens are coming home to roost for Dennis at last. For years he treated his wife and children badly, and now ...",
-        "answer": "They've left and he's old and lonely",
+        "ans": "They've left and he's old and lonely",
         "fake": ["They're taking care of him", "They're still putting up with him", "They bought presents for him"]
     },
     {
         "question": "Even though uncle Barry drinks like a fish, he ...",
-        "answer": "Never looks drunk",
+        "ans": "Never looks drunk",
         "fake": ["Never drinks alcohol", "Never drinks much", "Never swims"]
     },
     {
         "question": "Look at Larry - he's dead to the world. He must be ...",
-        "answer": "Really tired",
+        "ans": "Really tired",
         "fake": ["Really sick", "Really lazy", "Really happy"]
     },
     {
         "question": "I wonder if Mike realises he's digging his own grave by  ...",
-        "answer": "Cheating on his taxes",
+        "ans": "Cheating on his taxes",
         "fake": ["Paying all his taxes", "Complaining about his taxes", "Paying double for his taxes"]
     },
     {
         "question": "Georgina says she finds it difficult to blow her own horn because she is ...",
-        "answer": "A very shy person",
+        "ans": "A very shy person",
         "fake": ["Not very musical", "Very proud of herself", "Not having any horn"]
     },
     {
         "question": "The accused man said it was music to his ears when the judge said ...",
-        "answer": "Not guilty",
+        "ans": "Not guilty",
         "fake": ["Guilty", "Life without parole", "Sentence to death"]
     },
     {
         "question": "When I heard the poem, some of the lines rang a bell and ...",
-        "answer": "I thought I'd heard it somewhere before",
+        "ans": "I thought I'd heard it somewhere before",
         "fake": ["Sounded very beautiful", "Some of them beat a drum", "I have to open the door"]
     },
     {
         "question": "If something is described as being a drop in the ocean, it is ...",
-        "answer": "A small part of what's needed",
+        "ans": "A small part of what's needed",
         "fake": ["A huge part of what's needed", "All that's needed", "A must-have part"]
     },
     {
         "question": "The kids in the hospital had a ray of sunshine in their lives when ...",
-        "answer": "Some famous footballers visited them",
+        "ans": "Some famous footballers visited them",
         "fake": ["They were taken to sit outside in the sun", "The nurses checked their blood pressure", "Their medicines run out"]
     },
     {
-        "question": "While they were driving, Louisa said she had to answer the call of nature, so Mario ...",
-        "answer": "Stopped the car when they found a bathroom",
+        "question": "While they were driving, Louisa said she had to ans the call of nature, so Mario ...",
+        "ans": "Stopped the car when they found a bathroom",
         "fake": ["Gave her his phone", "Said they'd go camping on the weekend", "Howled like a wolf"]
     },
     {
         "question": "Grant felt all at sea because ...",
-        "answer": "It was his first day at university",
+        "ans": "It was his first day at university",
         "fake": ["He was enjoying sailing", "He was sick of his job", "He hated the sea"]
     },
     {
         "question": "I'm trying to go with the flow more and ...",
-        "answer": "Be more relaxed about things",
+        "ans": "Be more relaxed about things",
         "fake": ["Float down the river", "Control every aspect of my life", "Start an arguement"]
     },
     {
         "question": "Mark's being a pain in the neck this morning, so ...",
-        "answer": "I'll try to avoid him",
+        "ans": "I'll try to avoid him",
         "fake": ["I'll help him with his work", "I'll give him a massage", "I'll buy him a present"]
     },
     {
         "question": "Mr Murdoch gave Jenny a pat on the back for ...",
-        "answer": "Doing such a good job",
+        "ans": "Doing such a good job",
         "fake": ["Being late again", "Failing at the presentation", "Forgetting the files"]
     },
     {
         "question": "Debbie made a slip of the tongue when she said that ...",
-        "answer": "Paris is in Spain",
+        "ans": "Paris is in Spain",
         "fake": ["London is in England", "Moscow is in Russia", "Munich is in Germany"]
     },
     {
         "question": "Losing that job was a blessing in disguise because it meant I ...",
-        "answer": "Got a much better job",
+        "ans": "Got a much better job",
         "fake": ["Lost my house", "Was unemployed for years", "Went bankrupt"]
     },
     {
         "question": "My friends all called and told me to hang in there after I had ...",
-        "answer": "A traffic accident",
+        "ans": "A traffic accident",
         "fake": ["Left for my honeymoon", "Decided to go sky-diving", "Gone for a date"]
     },
     {
         "question": "People who keep loaded guns in the house are playing with fire because the guns ...",
-        "answer": "Could go off accidentally and kill someone",
+        "ans": "Could go off accidentally and kill someone",
         "fake": ["Might be too heavy", "Would go rusty", "Have expensive bullets"]
     },
     {
         "question": "In business, it's often necessary to be quick on the draw, but sometimes it's better to ...",
-        "answer": "Think carefully before doing something",
+        "ans": "Think carefully before doing something",
         "fake": ["Do something faster than others", "Be slow to understand what's happening", "Rush into things"]
     },
     {
         "question": "If you read between the lines, you will ...",
-        "answer": "Know what the writer really thinks",
+        "ans": "Know what the writer really thinks",
         "fake": ["Be able to read a lot quicker", "Make up the story for yourself", "Be boring"]
     },
     {
         "question": "Her name is mud these days because ...",
-        "answer": "She was caught cheating",
+        "ans": "She was caught cheating",
         "fake": ["She didn't clean up her room", "She changed it", "She took a mud bath"]
     },
     {
         "question": "If you say to someone 'You're so full of yourself!' they'll probably feel ...",
-        "answer": "Upset",
+        "ans": "Upset",
         "fake": ["Proud", "Pleasure", "Happy"]
     },
     {
         "question": "Steve is trying hard to improve at golf because when he plays with his friends he ...",
-        "answer": "Can't hold his own",
+        "ans": "Can't hold his own",
         "fake": ["Can hold his own", "Can hold his friends'", "Can't be hold"]
     },
     {
         "question": "Bob and Jane decided to tie the knot because ...",
-        "answer": "They loved one another",
+        "ans": "They loved one another",
         "fake": ["It had come undone", "They needed to save money", "They don't want to argue futhermore"]
     },
     {
         "question": "Marrying James was just a means to an end for Kerry. Her real goal was ...",
-        "answer": "To be rich",
+        "ans": "To be rich",
         "fake": ["To be his wife", "To have his children", "To clean his house"]
     },
     {
         "question": "Doctors say they are sure, beyond a shadow of a doubt, that ...",
-        "answer": "Cigarettes are bad for you",
+        "ans": "Cigarettes are bad for you",
         "fake": ["Fatty foods are good for you", "Fruits and vegetables are bad for you", "Don't go to the hospital when you're sick"]
     },
     {
         "question": "I've dotted the i's and crossed the t's, so there ...",
-        "answer": "Shouldn't be any mistakes",
+        "ans": "Shouldn't be any mistakes",
         "fake": ["Will be a few mistakes", "Will be lots of mistakes", "Will all be mistakes"]
     },
     {
         "question": "I've been in Harry's good books ever since I ...",
-        "answer": "Fixed his computer",
+        "ans": "Fixed his computer",
         "fake": ["Crashed his car", "Got drunk at his wedding", "Broke his phone"]
     },
     {
         "question": "Sam couldn't get a word in edgeways because Cindy was ...",
-        "answer": "Talking too much",
+        "ans": "Talking too much",
         "fake": ["Playing music", "Listening too much", "Talking too little"]
     },
     {
         "question": "For which job would 'a jack of all trades' be best suited?",
-        "answer": "A caretaker in a school",
+        "ans": "A caretaker in a school",
         "fake": ["A dealer in a casino", "A teller in a bank", "Talking too little"]
     },
     {
         "question": "We started an online business, but after a while it was back to the drawing board because ...",
-        "answer": "We couldn't make a profit",
+        "ans": "We couldn't make a profit",
         "fake": ["We made a lot of money", "We wanted to improve our drawing", "We were too successful"]
     },
     {
         "question": "A journalist is digging up dirt on a politician in order to ...",
-        "answer": "Damage the politician's image",
+        "ans": "Damage the politician's image",
         "fake": ["Help the politician's campaign", "Increase the politician's popularity", "He want to plant trees"]
     },
     {
         "question": "You can see that Mike's got a soft spot for dogs. Whenever he sees one, he ...",
-        "answer": "Pats it on the head",
+        "ans": "Pats it on the head",
         "fake": ["Kicks it", "Runs away", "Keeps away from it"]
     },
     {
         "question": "Monique has decided to take the plunge and ...",
-        "answer": "Start up her own business",
+        "ans": "Start up her own business",
         "fake": ["Keep her job for a while", "Put all her money in the bank", "Pay all the taxes"]
     },
     {
         "question": "We'll have to leave the list of guests we're inviting to our wedding up in the air until we know ...",
-        "answer": "How many we can invite",
+        "ans": "How many we can invite",
         "fake": ["What the weather will be like", "If any are of them are afraid of heights", "How to land it down"]
     }
 ]

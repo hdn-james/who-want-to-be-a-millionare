@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 class RankingTable(QTableWidget):
     def __init__(self, parent=None):
         QTableWidget.__init__(self, parent)
-        self.setGeometry(QtCore.QRect(130, 90, 381, 221))
+        self.setGeometry(QtCore.QRect(80, 200, 1120, 650))
         self.setStyleSheet(''' 
                            QTableWidget {
                                border: none;
@@ -15,8 +15,9 @@ class RankingTable(QTableWidget):
                                background-color: #2E7BA6;
                                color: white;
                                font-weight: bold;
-                               border-radius: 14px;
+                               border-radius: 18px;
                                margin: 2px;
+                               font-size: 20px;
                             }
                             
                             QTableWidget::item {
@@ -24,7 +25,8 @@ class RankingTable(QTableWidget):
                                color: white;
                                text-align: center;
                                font-weight: bold;
-                               border-radius: 14px;
+                               border-radius: 16px;
+                               font-size: 18px;
                                margin: 2px;
                             }
                            
@@ -59,8 +61,8 @@ class RankingTable(QTableWidget):
         #resize column
         column = self.horizontalHeader()       
         column.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-        self.setColumnWidth(0, 50)
-        self.setColumnWidth(2, 80)
+        self.setColumnWidth(0, 100)
+        self.setColumnWidth(2, 140)
         
     def createHeading(self):
         header = ['Rank', 'Username', 'Score']

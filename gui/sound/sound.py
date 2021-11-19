@@ -19,4 +19,6 @@ def playCorrect():
 def playWrong():
     musics = configuration.musics
     file = musics['wrong']
-    configuration.music.setSource(QtCore.QUrl.fromLocalFile(current_dir + file))
+    music = QtMultimedia.QSoundEffect(QtCore.QCoreApplication.instance())
+    music.setSource(QtCore.QUrl.fromLocalFile(current_dir + file))
+    music.play()

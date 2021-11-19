@@ -83,6 +83,7 @@ class UI_RegisterScreen(object):
             self.dialog.activateWindow()
             self.dialog.raise_()
     
-        ui = gui.screen.UI_LoadingScreen()
+        #ui = gui.screen.UI_LoadingScreen()
+        ui = gui.screen.UI_QuestionScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()

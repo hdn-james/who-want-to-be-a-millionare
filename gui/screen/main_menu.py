@@ -74,7 +74,9 @@ class UI_MainMenu(object):
         MainWindow.show()
         
     def handleClickSettings(self, MainWindow):
-        print("Clicked Settings Button")
+        ui = gui.screen.UI_SettingsScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         
     def handleClickTutorial(self, MainWindow):
         ui = gui.screen.UI_TutorialScreen()

@@ -5,3 +5,4 @@ from gui.screen.question_screen import UI_QuestionScreen
 from gui.screen.register_screen import UI_RegisterScreen
 from gui.screen.tutorial_screen import UI_TutorialScreen
 from gui.screen.loading_screen import UI_LoadingScreen
+from gui.screen.settings_screen import UI_SettingsScreen

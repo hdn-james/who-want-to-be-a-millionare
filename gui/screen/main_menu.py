@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
 from gui.widgets.Button248x64 import Button248x64
 import gui.screen
+from gui.sound.sound import playCorrect
 
 class UI_MainMenu(object):
     def setupUi(self, MainWindow):
@@ -69,12 +70,17 @@ class UI_MainMenu(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         
     def handleClickStart(self, MainWindow):
+        #test
+        playCorrect()
+        #####
         ui = gui.screen.UI_RegisterScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
         
     def handleClickSettings(self, MainWindow):
-        print("Clicked Settings Button")
+        ui = gui.screen.UI_SettingsScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         
     def handleClickTutorial(self, MainWindow):
         ui = gui.screen.UI_TutorialScreen()

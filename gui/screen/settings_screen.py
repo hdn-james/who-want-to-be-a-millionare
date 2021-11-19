@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 import gui.screen
+import configuration
 
 url = "./who-want-to-be-a-millionare/gui/" 
 
@@ -35,6 +36,7 @@ class UI_SettingsScreen(object):
         self.volume.setGeometry(QtCore.QRect(210, 390, 851, 22))
         self.volume.setOrientation(QtCore.Qt.Horizontal)
         self.volume.setObjectName("volume")
+        self.volume.setValue(configuration.music.volume() * 100)
         self.volume.setStyleSheet(''' QSlider::groove:horizontal {
                                         border: 1px solid #bbb;
                                         background: white;
@@ -65,6 +67,7 @@ class UI_SettingsScreen(object):
                                         border-radius: 4px;
                                         }
                                       ''')
+        self.volume.valueChanged.connect(self.handleChangeVolume)
         
         #play button
         self.playBtn = Button100x100(self.centralwidget)
@@ -87,4 +90,8 @@ class UI_SettingsScreen(object):
         ui = gui.screen.UI_MainMenu()
         ui.setupUi(MainWindow)
         MainWindow.show()
+        
+    def handleChangeVolume(self):
+        value = self.volume.value() / 100
+        configuration.music.setVolume(value)
 

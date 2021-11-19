@@ -1,8 +1,7 @@
 import sys
-import json
 from PyQt5 import QtWidgets
 from gui.screen.main_menu import UI_MainMenu
-from server.utils.username import checkUsername
+from gui.sound.sound import playBackground
 import configuration
 
 configuration.init()
@@ -13,6 +12,7 @@ def main():
     ui = UI_MainMenu()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    playBackground()
     sys.exit(app.exec_())
 
 if __name__ == "__main__":

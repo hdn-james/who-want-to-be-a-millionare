@@ -1,365 +1,123 @@
 {
-  "1": {
-    "correct": "Cow"
-  },
-  "2": {
-    "correct": "Hedgehog"
-  },
-  "3": {
-    "correct": "March"
-  },
-  "4": {
-    "correct": "Wizard"
-  },
-  "5": {
-    "correct": "Camelot"
-  },
-  "6": {
-    "correct": "Hyacinth"
-  },
-  "7": {
-    "correct": "Eva"
-  },
-  "8": {
-    "correct": "Apple a day"
-  },
-  "9": {
-    "correct": "Navy"
-  },
-  "10": {
-    "correct": "Motherboard"
-  },
-  "11": {
-    "correct": "Car"
-  },
-  "12": {
-    "correct": "Feather"
-  },
-  "13": {
-    "correct": "Insincere display of emotions"
-  },
-  "14": {
-    "correct": "People would not listen to"
-  },
-  "15": {
-    "correct": "A difficult problem"
-  },
-  "16": {
-    "correct": "Very expensive and useless"
-  },
-  "17": {
-    "correct": "Nine"
-  },
-  "18": {
-    "correct": "Change your opinion about someone or something"
-  },
-  "19": {
-    "correct": "A dime a dozen"
-  },
-  "20": {
-    "correct": "An issue, person, or problem that someone is trying to avoid"
-  },
-  "21": {
-    "correct": "Be in the same position"
-  },
-  "22": {
-    "correct": "Happening only rarely"
-  },
-  "23": {
-    "correct": "Something which is easy"
-  },
-  "24": {
-    "correct": "To die while on duty"
-  },
-  "25": {
-    "correct": "A disgraceful person"
-  },
-  "26": {
-    "correct": "Well organized"
-  },
-  "27": {
-    "correct": "Ignore someone"
-  },
-  "28": {
-    "correct": "To speak in a roundabout indirect way"
-  },
-  "29": {
-    "correct": "Finding meanings that are intended, but that are not directly expressed"
-  },
-  "30": {
-    "correct": "Just at the last moment"
-  },
-  "31": {
-    "correct": "Outstanding"
-  },
-  "32": {
-    "correct": "Easy to understand"
-  },
-  "33": {
-    "correct": "Good luck"
-  },
-  "34": {
-    "correct": "Rumour"
-  },
-  "35": {
-    "correct": "Indigence"
-  },
-  "36": {
-    "correct": "Feeling sick"
-  },
-  "37": {
-    "correct": "Highly unlikely to happen"
-  },
-  "38": {
-    "correct": "Something that is very easy"
-  },
-  "39": {
-    "correct": "To go to bed in order to sleep"
-  },
-  "40": {
-    "correct": "To be nervous"
-  },
-  "41": {
-    "correct": "Start to relax and enjoy oneself freely"
-  },
-  "42": {
-    "correct": "Renew contact with someone or something"
-  },
-  "43": {
-    "correct": "To trick someone in a playful way"
-  },
-  "44": {
-    "correct": "Discussed"
-  },
-  "45": {
-    "correct": "Unfeelingly"
-  },
-  "46": {
-    "correct": "In prosperity and adversity"
-  },
-  "47": {
-    "correct": "To be disagree/annoyed"
-  },
-  "48": {
-    "correct": "Caught in the act of committing the crime"
-  },
-  "49": {
-    "correct": "Appear miserable"
-  },
-  "50": {
-    "correct": "A hope or plan that will never come true"
-  },
-  "51": {
-    "correct": "Personal jealousy"
-  },
-  "52": {
-    "correct": "A victory that brings more loss than gains"
-  },
-  "53": {
-    "correct": "With all their might"
-  },
-  "54": {
-    "correct": "Get reprimanded"
-  },
-  "55": {
-    "correct": "Avoid risks"
-  },
-  "56": {
-    "correct": "Telling the truth"
-  },
-  "57": {
-    "correct": "Be prominent"
-  },
-  "58": {
-    "correct": "To be at the peak of"
-  },
-  "59": {
-    "correct": "To be in a good mood"
-  },
-  "60": {
-    "correct": "To criticize someone"
-  },
-  "61": {
-    "correct": "To come up to expectations"
-  },
-  "62": {
-    "correct": "To remain idle"
-  },
-  "63": {
-    "correct": "To play the card to win"
-  },
-  "64": {
-    "correct": "Very different from"
-  },
-  "65": {
-    "correct": "Wasting time in useless effort"
-  },
-  "66": {
-    "correct": "The main point"
-  },
-  "67": {
-    "correct": "Under suspicion"
-  },
-  "68": {
-    "correct": "Use every means in one’s power"
-  },
-  "69": {
-    "correct": "Suddenly"
-  },
-  "70": {
-    "correct": "Obstruct someone's progress"
-  },
-  "71": {
-    "correct": "Be disturbed or slightly mad"
-  },
-  "72": {
-    "correct": "Very similar to his father or mother"
-  },
-  "73": {
-    "correct": "Something done in revenge or retaliation"
-  },
-  "74": {
-    "correct": "Perfectly neat and tidy"
-  },
-  "75": {
-    "correct": "Reflect upon one’s past"
-  },
-  "76": {
-    "correct": "Very rich"
-  },
-  "77": {
-    "correct": "Unduly under control"
-  },
-  "78": {
-    "correct": "Active"
-  },
-  "79": {
-    "correct": "Cheated"
-  },
-  "80": {
-    "correct": "In danger"
-  },
-  "81": {
-    "correct": "An unfound rumour"
-  },
-  "82": {
-    "correct": "Misguided"
-  },
-  "83": {
-    "correct": "To be inconsistent"
-  },
-  "84": {
-    "correct": "Talked to himself"
-  },
-  "85": {
-    "correct": "Wants to go again next year"
-  },
-  "86": {
-    "correct": "Evidence of serious crimes"
-  },
-  "87": {
-    "correct": "They've left and he's old and lonely"
-  },
-  "88": {
-    "correct": "Never looks drunk"
-  },
-  "89": {
-    "correct": "Really tired"
-  },
-  "90": {
-    "correct": "Cheating on his taxes"
-  },
-  "91": {
-    "correct": "A very shy person"
-  },
-  "92": {
-    "correct": "Not guilty"
-  },
-  "93": {
-    "correct": "I thought I'd heard it somewhere before"
-  },
-  "94": {
-    "correct": "A small part of what's needed"
-  },
-  "95": {
-    "correct": "Some famous footballers visited them"
-  },
-  "96": {
-    "correct": "Stopped the car when they found a bathroom"
-  },
-  "97": {
-    "correct": "It was his first day at university"
-  },
-  "98": {
-    "correct": "Be more relaxed about things"
-  },
-  "99": {
-    "correct": "I'll try to avoid him"
-  },
-  "100": {
-    "correct": "Doing such a good job"
-  },
-  "101": {
-    "correct": "Paris is in Spain"
-  },
-  "102": {
-    "correct": "Got a much better job"
-  },
-  "103": {
-    "correct": "A traffic accident"
-  },
-  "104": {
-    "correct": "Could go off accidentally and kill someone"
-  },
-  "105": {
-    "correct": "Think carefully before doing something"
-  },
-  "106": {
-    "correct": "Know what the writer really thinks"
-  },
-  "107": {
-    "correct": "She was caught cheating"
-  },
-  "108": {
-    "correct": "Upset"
-  },
-  "109": {
-    "correct": "Can't hold his own"
-  },
-  "110": {
-    "correct": "They loved one another"
-  },
-  "111": {
-    "correct": "To be rich"
-  },
-  "112": {
-    "correct": "Cigarettes are bad for you"
-  },
-  "113": {
-    "correct": "Shouldn't be any mistakes"
-  },
-  "114": {
-    "correct": "Fixed his computer"
-  },
-  "115": {
-    "correct": "Talking too much"
-  },
-  "116": {
-    "correct": "A caretaker in a school"
-  },
-  "117": {
-    "correct": "We couldn't make a profit"
-  },
-  "118": {
-    "correct": "Damage the politician's image"
-  },
-  "119": {
-    "correct": "Pats it on the head"
-  },
-  "120": {
-    "correct": "Start up her own business"
-  },
-  "121": {
-    "correct": "How many we can invite"
-  }
+  "1": "Cow",
+  "2": "Hedgehog",
+  "3": "March",
+  "4": "Wizard",
+  "5": "Camelot",
+  "6": "Hyacinth",
+  "7": "Eva",
+  "8": "Apple a day",
+  "9": "Navy",
+  "10": "Motherboard",
+  "11": "Car",
+  "12": "Feather",
+  "13": "Insincere display of emotions",
+  "14": "People would not listen to",
+  "15": "A difficult problem",
+  "16": "Very expensive and useless",
+  "17": "Nine",
+  "18": "Change your opinion about someone or something",
+  "19": "A dime a dozen",
+  "20": "An issue, person, or problem that someone is trying to avoid",
+  "21": "Be in the same position",
+  "22": "Happening only rarely",
+  "23": "Something which is easy",
+  "24": "To die while on duty",
+  "25": "A disgraceful person",
+  "26": "Well organized",
+  "27": "Ignore someone",
+  "28": "To speak in a roundabout indirect way",
+  "29": "Finding meanings that are intended, but that are not directly expressed",
+  "30": "Just at the last moment",
+  "31": "Outstanding",
+  "32": "Easy to understand",
+  "33": "Good luck",
+  "34": "Rumour",
+  "35": "Indigence",
+  "36": "Feeling sick",
+  "37": "Highly unlikely to happen",
+  "38": "Something that is very easy",
+  "39": "To go to bed in order to sleep",
+  "40": "To be nervous",
+  "41": "Start to relax and enjoy oneself freely",
+  "42": "Renew contact with someone or something",
+  "43": "To trick someone in a playful way",
+  "44": "Discussed",
+  "45": "Unfeelingly",
+  "46": "In prosperity and adversity",
+  "47": "To be disagree/annoyed",
+  "48": "Caught in the act of committing the crime",
+  "49": "Appear miserable",
+  "50": "A hope or plan that will never come true",
+  "51": "Personal jealousy",
+  "52": "A victory that brings more loss than gains",
+  "53": "With all their might",
+  "54": "Get reprimanded",
+  "55": "Avoid risks",
+  "56": "Telling the truth",
+  "57": "Be prominent",
+  "58": "To be at the peak of",
+  "59": "To be in a good mood",
+  "60": "To criticize someone",
+  "61": "To come up to expectations",
+  "62": "To remain idle",
+  "63": "To play the card to win",
+  "64": "Very different from",
+  "65": "Wasting time in useless effort",
+  "66": "The main point",
+  "67": "Under suspicion",
+  "68": "Use every means in one’s power",
+  "69": "Suddenly",
+  "70": "Obstruct someone's progress",
+  "71": "Be disturbed or slightly mad",
+  "72": "Very similar to his father or mother",
+  "73": "Something done in revenge or retaliation",
+  "74": "Perfectly neat and tidy",
+  "75": "Reflect upon one’s past",
+  "76": "Very rich",
+  "77": "Unduly under control",
+  "78": "Active",
+  "79": "Cheated",
+  "80": "In danger",
+  "81": "An unfound rumour",
+  "82": "Misguided",
+  "83": "To be inconsistent",
+  "84": "Talked to himself",
+  "85": "Wants to go again next year",
+  "86": "Evidence of serious crimes",
+  "87": "They've left and he's old and lonely",
+  "88": "Never looks drunk",
+  "89": "Really tired",
+  "90": "Cheating on his taxes",
+  "91": "A very shy person",
+  "92": "Not guilty",
+  "93": "I thought I'd heard it somewhere before",
+  "94": "A small part of what's needed",
+  "95": "Some famous footballers visited them",
+  "96": "Stopped the car when they found a bathroom",
+  "97": "It was his first day at university",
+  "98": "Be more relaxed about things",
+  "99": "I'll try to avoid him",
+  "100": "Doing such a good job",
+  "101": "Paris is in Spain",
+  "102": "Got a much better job",
+  "103": "A traffic accident",
+  "104": "Could go off accidentally and kill someone",
+  "105": "Think carefully before doing something",
+  "106": "Know what the writer really thinks",
+  "107": "She was caught cheating",
+  "108": "Upset",
+  "109": "Can't hold his own",
+  "110": "They loved one another",
+  "111": "To be rich",
+  "112": "Cigarettes are bad for you",
+  "113": "Shouldn't be any mistakes",
+  "114": "Fixed his computer",
+  "115": "Talking too much",
+  "116": "A caretaker in a school",
+  "117": "We couldn't make a profit",
+  "118": "Damage the politician's image",
+  "119": "Pats it on the head",
+  "120": "Start up her own business",
+  "121": "How many we can invite"
 }

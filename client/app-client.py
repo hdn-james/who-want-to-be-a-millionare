@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import socket
 import selectors
@@ -9,11 +11,11 @@ sel = selectors.DefaultSelector()
 
 
 def create_request(action, value):
-    if action == "search":
+    if action == "get_question":
         return dict(
             type="text/json",
             encoding="utf-8",
-            content=dict(action=action, value=value),
+            content=dict(action=action),
         )
     else:
         return dict(
@@ -34,12 +36,15 @@ def start_connection(host, port, request):
     sel.register(sock, events, data=message)
 
 
-if len(sys.argv) != 3:
-    print("usage:", sys.argv[0], "<action> <value>")
-    sys.exit(1)
+if sys.argv[1] != 'get_question':
+    if len(sys.argv) != 3:
+        print("usage:", sys.argv[0], "<action> <value>")
+        sys.exit(1)
 
 host, port = '127.0.0.1', 65432
-action, value = sys.argv[1], sys.argv[2]
+action, value = sys.argv[1], None
+if action != 'get_question':
+    value = sys.argv[2]
 request = create_request(action, value)
 start_connection(host, port, request)
 

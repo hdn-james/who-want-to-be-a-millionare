@@ -3,6 +3,7 @@ import selectors
 import json
 import io
 import struct
+import random
 
 request_search = {
     "1": {
@@ -114,10 +115,14 @@ class Message:
 
     def _create_response_json_content(self):
         action = self.request.get("action")
-        if action == "search":
-            query = self.request.get("value")
+        if action == "get_question":
+            query = str(random.randint(1, 3))
             answer = request_search.get(query) or f'No match for "{query}".'
             content = {"result": answer}
+        elif action == "join":
+            # implement join action here
+            # ...
+            pass
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"

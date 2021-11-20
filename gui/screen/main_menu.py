@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtWidgets, QtGui
 from gui.widgets.Button248x64 import Button248x64
+import gui.screen
+from gui.sound.sound import playCorrect
 
 class UI_MainMenu(object):
     def setupUi(self, MainWindow):
@@ -17,7 +19,7 @@ class UI_MainMenu(object):
         MainWindow.resize(1280, 960)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #game-name
         self.gameName = QtWidgets.QLabel(self.centralwidget)
@@ -34,21 +36,21 @@ class UI_MainMenu(object):
         self.startBtn.setGeometry(QtCore.QRect(280, 550, 248, 64))
         self.startBtn.setName("startBtn")
         self.startBtn.setImage("images/start-button.png")
-        self.startBtn.clicked.connect(self.handleClickStart)
+        self.startBtn.clicked.connect(lambda: self.handleClickStart(MainWindow))
         
         #settings button
         self.settingsBtn = Button248x64(self.centralwidget)
         self.settingsBtn.setGeometry(QtCore.QRect(750, 550, 248, 64))
         self.settingsBtn.setName("settingsBtn")
         self.settingsBtn.setImage("images/settings-button.png")
-        self.settingsBtn.clicked.connect(self.handleClickSettings)
+        self.settingsBtn.clicked.connect(lambda: self.handleClickSettings(MainWindow))
         
         #tutorial button
         self.tutorialBtn = Button248x64(self.centralwidget)
         self.tutorialBtn.setGeometry(QtCore.QRect(280, 680, 248, 64))
         self.tutorialBtn.setName("tutorialBtn")
         self.tutorialBtn.setImage("images/tutorial-button.png")
-        self.tutorialBtn.clicked.connect(self.handleClickTutorial)
+        self.tutorialBtn.clicked.connect(lambda: self.handleClickTutorial(MainWindow))
         
         #exit button
         self.exitBtn = Button248x64(self.centralwidget)
@@ -67,14 +69,23 @@ class UI_MainMenu(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         
-    def handleClickStart(self):
-        print("Clicked Start Button")
+    def handleClickStart(self, MainWindow):
+        #test
+        playCorrect()
+        #####
+        ui = gui.screen.UI_RegisterScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         
-    def handleClickSettings(self):
-        print("Clicked Settings Button")
+    def handleClickSettings(self, MainWindow):
+        ui = gui.screen.UI_SettingsScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         
-    def handleClickTutorial(self):
-        print("Clicked Tutorial Button")
+    def handleClickTutorial(self, MainWindow):
+        ui = gui.screen.UI_TutorialScreen()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
         
     def handleClickExit(self, MainWindow):
         MainWindow.close()

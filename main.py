@@ -1,12 +1,22 @@
+import sys
 from PyQt5 import QtWidgets
 from gui.screen.main_menu import UI_MainMenu
-from gui.screen.question_screen import UI_QuestionScreen
+from gui.sound.sound import playBackground
+import configuration
 
-if __name__ == "__main__":
-    import sys
+configuration.init()
+
+def main():
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = UI_QuestionScreen()
+    ui = UI_MainMenu()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    playBackground()
     sys.exit(app.exec_())
+
+if __name__ == "__main__":
+    configuration.init()
+    main()
+    
+    

@@ -134,6 +134,13 @@ class UI_QuestionScreen(object):
         self.countdownTimer.setTextVisible(False)
         self.countdownTimer.setObjectName("countdownTimer")
         
+        #result
+        self.result = QtWidgets.QLabel(self.centralwidget)
+        self.result.setGeometry(QtCore.QRect(0, 250, 1280, 400))
+        self.result.setText("")
+        self.result.setAlignment(QtCore.Qt.AlignCenter)
+        self.result.setObjectName("result")
+        
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -160,6 +167,16 @@ class UI_QuestionScreen(object):
         else: 
             self.okBtn.hide()
             self.passBtn.hide()
+            
+    #show result
+    def showResult(self, result):
+        if result: 
+            self.result.setPixmap(QtGui.QPixmap(url + "images/correct.png"))
+        else:
+            self.result.setPixmap(QtGui.QPixmap(url + "images/wrong.png"))
+        self.result.show()
+        self.result.activateWindow()
+        self.result.raise_()
 
     #click button
     def handleClickPassButton(self):
@@ -170,6 +187,9 @@ class UI_QuestionScreen(object):
         
     def handleClickOKButton(self):
         print("OK!")
+        #checkResult --> result = checkResult
+        result = True
+        self.showResult(result)
     
     #value    
     def setScore(self, score):
@@ -202,4 +222,5 @@ class UI_QuestionScreen(object):
         self.chooseB.isChoose(False)
         self.chooseC.isChoose(False)
         self.chooseD.isChoose(True)
+        
     

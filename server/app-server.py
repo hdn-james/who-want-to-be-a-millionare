@@ -1,58 +1,52 @@
-import selectors
-import types
+import sys
 import socket
-import json
-import random
+import selectors
+import traceback
 
-def load_question(path):
-    f = open(path, "r")
-    questions = json.load(f)
-    f.close()
-    return questions
+import libserver
 
-def accept_connection(socket):
-    connection, address = socket.accept()
-    print('Accepted connection from', address)
-    connection.setblocking(False)
-    data = types.SimpleNamespace(addr=address, inb=b'', outb=b'')
-    events = selectors.EVENT_READ | selectors.EVENT_WRITE
-    sel.register(connection, events, data=data)
-
-def service_connection(key, mask):
-    sock = key.fileobj
-    data = key.data
-    if mask & selectors.EVENT_READ:
-        recv_data = sock.recv(1024)  # ready to read
-        if recv_data:
-            data.outb += recv_data
-        else:
-            print("Closing connection to", data.addr)
-            sel.unregister(sock)
-            sock.close()
-    if mask & selectors.EVENT_WRITE:
-        if data.outb:
-            print('echoing',repr(data.outb), 'to', data.addr)
-            sent = sock.send(data.outb) # reading to write
-            data.outb = data.outb[sent:]
-            
-questions = load_question("./server/lib/questions.json")
-
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 65432        # The port used by the server
 sel = selectors.DefaultSelector()
 
-lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-lsock.bind((HOST, PORT))
-lsock.listen()
-print("Listening on", (HOST, PORT))
-lsock.setblocking(False)
 
+def accept_wrapper(sock):
+    conn, addr = sock.accept()  # Should be ready to read
+    print("accepted connection from", addr)
+    conn.setblocking(False)
+    message = libserver.Message(sel, conn, addr)
+    sel.register(conn, selectors.EVENT_READ, data=message)
+
+
+if len(sys.argv) != 3:
+    print("usage:", sys.argv[0], "<host> <port>")
+    sys.exit(1)
+
+host, port = sys.argv[1], int(sys.argv[2])
+lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Avoid bind() exception: OSError: [Errno 48] Address already in use
+lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+lsock.bind((host, port))
+lsock.listen()
+print("listening on", (host, port))
+lsock.setblocking(False)
 sel.register(lsock, selectors.EVENT_READ, data=None)
 
-while True:
-    events = sel.select(timeout=None)
-    for key, mask in events:
-        if key.data is None:
-            accept_connection(key.fileobj)
-        else:
-            service_connection(key, mask)
+try:
+    while True:
+        events = sel.select(timeout=None)
+        for key, mask in events:
+            if key.data is None:
+                accept_wrapper(key.fileobj)
+            else:
+                message = key.data
+                try:
+                    message.process_events(mask)
+                except Exception:
+                    print(
+                        "main: error: exception for",
+                        f"{message.addr}:\n{traceback.format_exc()}",
+                    )
+                    message.close()
+except KeyboardInterrupt:
+    print("caught keyboard interrupt, exiting")
+finally:
+    sel.close()

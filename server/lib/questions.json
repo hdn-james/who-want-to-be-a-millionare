@@ -1,0 +1,1091 @@
+{
+    "1": {
+        "question": "A calf is the young of which animal?",
+        "answers": [
+            "Cow",
+            "Cat",
+            "Goat",
+            "Gorilla"
+        ]
+    },
+    "2": {
+        "question": "A computer-game hero is Sonic the what?",
+        "answers": [
+            "Hedgehog",
+            "Polecat",
+            "Aardvark",
+            "Muskrat"
+        ]
+    },
+    "3": {
+        "question": "A hare in which month is said to be mad?",
+        "answers": [
+            "March",
+            "July",
+            "April",
+            "August"
+        ]
+    },
+    "4": {
+        "question": "According to legend what was Merlin’s job at King Arthur’s court?",
+        "answers": [
+            "Wizard",
+            "Archer",
+            "Assassin",
+            "Warrior"
+        ]
+    },
+    "5": {
+        "question": "According to legend where was King Arthur’s court?",
+        "answers": [
+            "Camelot",
+            "Caerleon",
+            "Winchester",
+            "Tintagel Castle"
+        ]
+    },
+    "6": {
+        "question": "According to legend which flower is named after a boy accidentally killed by the god Apollo?",
+        "answers": [
+            "Hyacinth",
+            "Alyssum",
+            "Iris",
+            "Azalea"
+        ]
+    },
+    "7": {
+        "question": "According to the Bible, who was the first woman?",
+        "answers": [
+            "Eva",
+            "Eve",
+            "Evita",
+            "Evie"
+        ]
+    },
+    "8": {
+        "question": "According to the proverb, what 'keeps the doctor away'?",
+        "answers": [
+            "Apple a day",
+            "Melon a week",
+            "Orange a month",
+            "Banana a year"
+        ]
+    },
+    "9": {
+        "question": "Admiral is a rank in which branch of the armed forces?",
+        "answers": [
+            "Navy",
+            "Army",
+            "Marine Corps",
+            "Air Force"
+        ]
+    },
+    "10": {
+        "question": "All signals are directed through what circuit board in a minicomputer?",
+        "answers": [
+            "Motherboard",
+            "Fatherboard",
+            "Brotherboard",
+            "Daughterboard"
+        ]
+    },
+    "11": {
+        "question": "American engineer Henry Ford was most associated with which form of transport?",
+        "answers": [
+            "Car",
+            "Train",
+            "Ship",
+            "Air plane"
+        ]
+    },
+    "12": {
+        "question": "An achievement to be proud of is a ' ... in one's cap'?",
+        "answers": [
+            "Feather",
+            "Quill",
+            "Wing",
+            "Plume"
+        ]
+    },
+    "13": {
+        "question": "The phrase, 'Shedding Crocodile tears' means ...",
+        "answers": [
+            "Insincere display of emotions",
+            "Be in trouble",
+            "Be nervous",
+            "Find the hidden meaning"
+        ]
+    },
+    "14": {
+        "question": "The phrase, 'Fall on deaf ears’ means ...?",
+        "answers": [
+            "People would not listen to",
+            "Cannot remember",
+            "To be in trouble",
+            "Find the hidden meaning"
+        ]
+    },
+    "15": {
+        "question": "The phrase, 'A hard nut to crack' means ...?",
+        "answers": [
+            "A difficult problem",
+            "An interesting problem",
+            "A unique problem",
+            "A simple problem"
+        ]
+    },
+    "16": {
+        "question": "'Ram sold their house because it was a real white elephant'. The phrase, 'real white elephant' means ...?",
+        "answers": [
+            "Very expensive and useless",
+            "A rare find",
+            "A very big one",
+            "A useless one"
+        ]
+    },
+    "17": {
+        "question": "'A stich in time saves ....'",
+        "answers": [
+            "Nine",
+            "Six",
+            "Four",
+            "Seven"
+        ]
+    },
+    "18": {
+        "question": "The phrase, 'A change of heart' means ...",
+        "answers": [
+            "Change your opinion about someone or something",
+            " Find the hidden meaning",
+            "Say what you really mean",
+            "Pretend to be upset"
+        ]
+    },
+    "19": {
+        "question": "A phrase which expresses 'Something that is very common, not unique'",
+        "answers": [
+            "A dime a dozen",
+            "Bite the bullet",
+            "Don't judge a book by its cover",
+            "Biting off more than you can chew"
+        ]
+    },
+    "20": {
+        "question": "A phrase which expresses 'The elephant in the room'",
+        "answers": [
+            "An issue, person, or problem that someone is trying to avoid",
+            "To fail in a spectacular manner",
+            "Joking with someone",
+            "Reading or hearing something from the source"
+        ]
+    },
+    "21": {
+        "question": "The phrase, 'In the same boat' means  ...",
+        "answers": [
+            "Be in the same position",
+            "Try and do something",
+            "Live in the same town",
+            "Say what it literally means"
+        ]
+    },
+    "22": {
+        "question": "The phrase, 'once in a blue moon' means  ...",
+        "answers": [
+            "Happening only rarely",
+            "Making up for lost time",
+            "Always being late",
+            "In a very roundabout way"
+        ]
+    },
+    "23": {
+        "question": "'Life is not a bed of roses'. The phrase, 'a bed of roses' means ...?",
+        "answers": [
+            "Something which is easy",
+            "Something which is interesting",
+            "Something which is beautiful",
+            "Something which is very large"
+        ]
+    },
+    "24": {
+        "question": "The phrase, 'to die in harness' means  ...",
+        "answers": [
+            "To die while on duty",
+            "To die early",
+            "To die under duress",
+            "To die peacefully"
+        ]
+    },
+    "25": {
+        "question": "What is the meaning of the term: 'black sheep'?",
+        "answers": [
+            "A disgraceful person",
+            "A graceful person",
+            "A foolish person",
+            "A gentleman"
+        ]
+    },
+    "26": {
+        "question": "The phrase, 'get ducks in a row' means  ...",
+        "answers": [
+            "Well organized",
+            "Jumble",
+            "Un co-ordinated",
+            "Heller – sketter"
+        ]
+    },
+    "27": {
+        "question": "The phrase, 'giving the cold shoulder' means  ...",
+        "answers": [
+            "Ignore someone",
+            "Be nervous",
+            "Having the full attention",
+            "Would not listen to something"
+        ]
+    },
+    "28": {
+        "question": "The phrase, 'beating around the Bush' means  ...",
+        "answers": [
+            "To speak in a roundabout indirect way",
+            "To talk softly and clearly",
+            "To speak the truth",
+            "To speak in an unnatural way"
+        ]
+    },
+    "29": {
+        "question": "The phrase, 'read between the lines' means  ...",
+        "answers": [
+            "Finding meanings that are intended, but that are not directly expressed",
+            "You have my full attention",
+            "Say what you really feel",
+            "Pretend to be upset"
+        ]
+    },
+    "30": {
+        "question": "The phrase, 'in the nick of time' means  ...",
+        "answers": [
+            "Just at the last moment",
+            "At the start moment",
+            "At the middle moment",
+            "At the present moment"
+        ]
+    },
+    "31": {
+        "question": "The phrase, 'marked with superiority' means  ...",
+        "answers": [
+            "Outstanding",
+            "Egoistic",
+            "Inferiority",
+            "Pending"
+        ]
+    },
+    "32": {
+        "question": "The phrase, 'plain as day' means  ...",
+        "answers": [
+            "Easy to understand",
+            "Being out of your depth or comfort zone in a situation",
+            "To be of advantage to someone",
+            "In state of extreme happiness"
+        ]
+    },
+    "33": {
+        "question": "The phrase, 'break a leg' means  ...",
+        "answers": [
+            "Good luck",
+            "Bad luck",
+            "Misfortune",
+            "To ignore someone"
+        ]
+    },
+    "34": {
+        "question": "The phrase, 'hear it on the grape vine' means  ...",
+        "answers": [
+            "Rumour",
+            "Testimony",
+            "Proof",
+            "Audition"
+        ]
+    },
+    "35": {
+        "question": "The phrase, 'in dire straits' means  ...",
+        "answers": [
+            "Indigence",
+            "Good fortune",
+            "Providence",
+            "Extremely happy"
+        ]
+    },
+    "36": {
+        "question": "The phrase, 'under the weather' means  ...",
+        "answers": [
+            "Feeling sick",
+            "Worrying that something bad may happen",
+            "Having more energy on colder days",
+            "Being willing to accept risks"
+        ]
+    },
+    "37": {
+        "question": "The phrase, 'when pigs fly' means  ...",
+        "answers": [
+            "Highly unlikely to happen",
+            "Very imaginative",
+            "Nothing like it should have been",
+            "Random or unpredictable outcome"
+        ]
+    },
+    "38": {
+        "question": "The phrase, 'to be a piece of cake' means  ...",
+        "answers": [
+            "Something that is very easy",
+            "To refer to something that is pleasant to hear",
+            "To refer to a wedge-shaped object",
+            "Something that looks nice but is bad for health"
+        ]
+    },
+    "39": {
+        "question": "The phrase, 'hit the hay' means  ...",
+        "answers": [
+            "To go to bed in order to sleep",
+            "To end in failure",
+            "To fall so that your body hits the ground heavily",
+            "To love your work"
+        ]
+    },
+    "40": {
+        "question": "The phrase, 'have butterflies in one’s stomach' means  ...",
+        "answers": [
+            "To be nervous",
+            "To do a job in a rushed manner",
+            "To be so angry that your stomach feels tense",
+            "To have a stomach illness"
+        ]
+    },
+    "41": {
+        "question": "The phrase, 'let your hair down' means  ...",
+        "answers": [
+            "Start to relax and enjoy oneself freely",
+            "Become sloppy",
+            "Change one’s appearance",
+            "Show one’s true nature to others"
+        ]
+    },
+    "42": {
+        "question": "The phrase, 'to touch base' means  ...",
+        "answers": [
+            "Renew contact with someone or something",
+            "Go back to the original place",
+            "Analyse the problem and find the root cause",
+            "Start from the basics"
+        ]
+    },
+    "43": {
+        "question": "The phrase, 'pull someone's leg' means  ...",
+        "answers": [
+            "To trick someone in a playful way",
+            "To tell someone to take longer steps",
+            "To try and get someone’s attention quickly",
+            "To be rude to someone by saying something hurtful"
+        ]
+    },
+    "44": {
+        "question": "'We talked over the matter for an hour but without any result'. The phrase, 'talked over' means  ...",
+        "answers": [
+            "Discussed",
+            "Fought about",
+            "Surveyed",
+            "Assessed"
+        ]
+    },
+    "45": {
+        "question": "'He was murdered in cold blood'. The phrase, 'cold blood' means  ...",
+        "answers": [
+            "Unfeelingly",
+            "Thoughtlessly",
+            "Coolly",
+            "Deliberately"
+        ]
+    },
+    "46": {
+        "question": "'Suganya stood by her husband in weal and woe'. The phrase, 'weal and woe' means  ...",
+        "answers": [
+            "In prosperity and adversity",
+            "During the operation",
+            "During illness",
+            "By hook or crook"
+        ]
+    },
+    "47": {
+        "question": "'I have a bone to pick with you in this matter.'. The phrase, 'have a bone to pick' means  ...",
+        "answers": [
+            "To be disagree/annoyed",
+            "Desire",
+            "Selfish motive",
+            "Selfless motive"
+        ]
+    },
+    "48": {
+        "question": "'The inspector was caught red handed'. The phrase, 'red handed' means  ...",
+        "answers": [
+            "Caught in the act of committing the crime",
+            "Found with hands tied",
+            "Caught with dirty hands",
+            "Quickly"
+        ]
+    },
+    "49": {
+        "question": "The phrase, 'be down in the dumps' means  ...",
+        "answers": [
+            "Appear miserable",
+            "Ever ready to take on",
+            "To fall down",
+            "To fall from grace"
+        ]
+    },
+    "50": {
+        "question": "The phrase, 'a pipe dream' means  ...",
+        "answers": [
+            "A hope or plan that will never come true",
+            "A nightmare",
+            "An unending dream",
+            "A day dream"
+        ]
+    },
+    "51": {
+        "question": "The phrase, 'the green eyed monster' means  ...",
+        "answers": [
+            "Personal jealousy",
+            "To get into trouble",
+            "The creature of the sea",
+            "An animal with green eyes"
+        ]
+    },
+    "52": {
+        "question": "The phrase, 'a pyrrhic victory' means  ...",
+        "answers": [
+            "A victory that brings more loss than gains",
+            "A quid pro quo",
+            "Devastating victory",
+            "A victory which is not possible"
+        ]
+    },
+    "53": {
+        "question": "'I am sure they will fight tooth and nail for their rights'. The phrase, 'tooth and nail' means  ...",
+        "answers": [
+            "With all their might",
+            "Very cowardly",
+            "Without any weapon",
+            "With all their rights"
+        ]
+    },
+    "54": {
+        "question": "The phrase, 'face the music' means  ...",
+        "answers": [
+            "Get reprimanded",
+            "Listen to the music",
+            "Feel sorry",
+            "Get finished"
+        ]
+    },
+    "55": {
+        "question": "The phrase, 'play it safe' means  ...",
+        "answers": [
+            "Avoid risks",
+            "Play for pleasure",
+            "Play light games",
+            "Play a game peacefully"
+        ]
+    },
+    "56": {
+        "question": "The phrase, 'plain speaking' means  ...",
+        "answers": [
+            "Telling the truth",
+            "Revealing the secret",
+            "Spilling the beans",
+            "Telling nonsense"
+        ]
+    },
+    "57": {
+        "question": "The phrase, 'be to the fore' means  ...",
+        "answers": [
+            "Be prominent",
+            "To take the lead",
+            "To the brim",
+            "Pre-apprehension"
+        ]
+    },
+    "58": {
+        "question": "The phrase, 'to be at the zenith of' means  ...",
+        "answers": [
+            "To be at the peak of",
+            "To face difficulty boldly",
+            "To die an immature death",
+            "To be succumbed to, one’s flattery"
+        ]
+    },
+    "59": {
+        "question": "The phrase, 'to keep one’s temper' means  ...",
+        "answers": [
+            "To be in a good mood",
+            "To be aloof from",
+            "To preserve one’s energy",
+            "To become angry"
+        ]
+    },
+    "60": {
+        "question": "The phrase, 'to pick holes' means  ...",
+        "answers": [
+            "To criticize someone",
+            "To cut some part of an item",
+            "To destroy something",
+            "To find some reason to fight"
+        ]
+    },
+    "61": {
+        "question": "The phrase, 'cut the mustard' means  ...",
+        "answers": [
+            "To come up to expectations",
+            "To leave the job",
+            "To get injured",
+            "To lose"
+        ]
+    },
+    "62": {
+        "question": "The phrase, 'let the grass grow under one’s feet' means  ...",
+        "answers": [
+            "To remain idle",
+            "To be trifled with",
+            "To engage in useless talk",
+            "To accept responsibility"
+        ]
+    },
+    "63": {
+        "question": "The phrase, 'plough a lone furrow' means  ...",
+        "answers": [
+            "To play the card to win",
+            "Do something that achieves the desired success",
+            "To play the last card",
+            "To play the best card"
+        ]
+    },
+    "64": {
+        "question": "The phrase, 'far cry from' means  ...",
+        "answers": [
+            "Very different from",
+            "To approach silently",
+            "To leave silently",
+            "To come from far"
+        ]
+    },
+    "65": {
+        "question": "The phrase, 'beatin/flogging a dead horse' means  ...",
+        "answers": [
+            "Wasting time in useless effort",
+            "Repeating our request",
+            "Beating about the bush",
+            "Making one see reason"
+        ]
+    },
+    "66": {
+        "question": "'The bare bones of the conversion had been that he hated my guts'. The phrase, 'bare bones' means  ...",
+        "answers": [
+            "The main point",
+            "The detailed analysis",
+            "Just bones",
+            "The naked truth"
+        ]
+    },
+    "67": {
+        "question": "The phrase, 'under a cloud' means  ...",
+        "answers": [
+            "Under suspicion",
+            "Under observation",
+            "Experiencing cloudy weather",
+            "Enjoying favourable luck"
+        ]
+    },
+    "68": {
+        "question": "The phrase, 'play all one's cards' means  ...",
+        "answers": [
+            "Use every means in one’s power",
+            "A game of cards",
+            "An ineffective card game",
+            "Losing the last penny in gambling"
+        ]
+    },
+    "69": {
+        "question": "The phrase, 'be out of the blue' means  ...",
+        "answers": [
+            "Suddenly",
+            "Come out of gloom",
+            "Euphoria",
+            "Lighting"
+        ]
+    },
+    "70": {
+        "question": "The phrase, 'put a spoke in one's wheel' means  ...",
+        "answers": [
+            "Obstruct someone's progress",
+            "Help someone with advice",
+            "Help someone to progress",
+            "Grinder"
+        ]
+    },
+    "71": {
+        "question": "The phrase, 'to have a screw loose' means  ...",
+        "answers": [
+            "Be disturbed or slightly mad",
+            "Be screw less",
+            "Be delightful",
+            "Accept a defective item"
+        ]
+    },
+    "72": {
+        "question": "'Truly he is a chip of the old block'. The phrase, 'a chip of the old block' means  ...",
+        "answers": [
+            "Very similar to his father or mother",
+            "A good actor",
+            "Outdated in his mannerisms",
+            "An honorable man"
+        ]
+    },
+    "73": {
+        "question": "The phrase, 'A quid pro quo' means  ...",
+        "answers": [
+            "Something done in revenge or retaliation",
+            "Selfish act of revenge",
+            "Selfless service",
+            "Give up"
+        ]
+    },
+    "74": {
+        "question": "'The project looks to be in apple pie order'. The phrase, 'in apple pie order' means  ...",
+        "answers": [
+            "Perfectly neat and tidy",
+            "Beautiful decorated",
+            "Dirty job",
+            "Having apple pie in the order"
+        ]
+    },
+    "75": {
+        "question": "'While I have a bath, you may chew the cud'. The phrase, 'chew the cud' means  ...",
+        "answers": [
+            "Reflect upon one’s past",
+            "Kill time",
+            "Go through legalities",
+            "Have breakfast"
+        ]
+    },
+    "76": {
+        "question": "'In the beginning of his career, he was practically rolling in money'. The phrase, 'rolling in money' means  ...",
+        "answers": [
+            "Very rich",
+            "Saved lot of money",
+            "Wasting a lot of money",
+            "Spending more than his earnings"
+        ]
+    },
+    "77": {
+        "question": "'He never wanted to keep her under his thumb and so he let her do what she liked'. The phrase, 'keep her under his thumb' means  ...",
+        "answers": [
+            "Unduly under control",
+            "In his presence all the time",
+            "Below his thumb",
+            "Inferior"
+        ]
+    },
+    "78": {
+        "question": "'One should not stay idle at home; but be up and doing'. The phrase, 'to be up and doing' means  ...",
+        "answers": [
+            "Active",
+            "Sleeping",
+            "Reading",
+            "Working"
+        ]
+    },
+    "79": {
+        "question": "'The cashier wiped the nose of his employer by presenting false bills'. The phrase, 'wiped the nose of' means  ...",
+        "answers": [
+            "Cheated",
+            "Doomed",
+            "Abused",
+            "Slapped"
+        ]
+    },
+    "80": {
+        "question": "'The captain played with determination because the honour of the team was at stake'. The phrase, 'at stake' means  ...",
+        "answers": [
+            "In danger",
+            "At the top",
+            "Appropriate",
+            "Very low"
+        ]
+    },
+    "81": {
+        "question": "'The CBI officials followed up the clue, but it proved to be a mare's nest'. The phrase, 'mare's nest' means  ...",
+        "answers": [
+            "An unfound rumour",
+            "Baseless",
+            "Time consuming",
+            "Useless"
+        ]
+    },
+    "82": {
+        "question": "'We are afraid that you may be led astray in Arvind’s bad company'. The phrase, 'led astray' means  ...",
+        "answers": [
+            "Misguided",
+            "Lose the job",
+            "Killed",
+            "Get into trouble"
+        ]
+    },
+    "83": {
+        "question": "'An honest person never plays fast and loose with his friends'. The phrase, 'fast and loose' means  ...",
+        "answers": [
+            "To be inconsistent",
+            "Delay tactics",
+            "Deceives",
+            "Ignores"
+        ]
+    },
+    "84": {
+        "question": "People used to say Uncle Charlie was a queer fish because he ...",
+        "answers": [
+            "Talked to himself",
+            "Didn't like fishing",
+            "Loved swimming",
+            "Loved fishes"
+        ]
+    },
+    "85": {
+        "question": "Ollie said he had a whale of a time at the jazz festival and he ...",
+        "answers": [
+            "Wants to go again next year",
+            "Wishes he hadn't gone",
+            "Probably won't bother going again",
+            "Tells his friends not to go"
+        ]
+    },
+    "86": {
+        "question": "The investigators knew that examining the company's books might open a can of worms. They suspected there'd be ...",
+        "answers": [
+            "Evidence of serious crimes",
+            "A huge number of worms",
+            "Nothing seriously wrong",
+            "Many cans containing worms"
+        ]
+    },
+    "87": {
+        "question": "The chickens are coming home to roost for Dennis at last. For years he treated his wife and children badly, and now ...",
+        "answers": [
+            "They've left and he's old and lonely",
+            "They're taking care of him",
+            "They're still putting up with him",
+            "They bought presents for him"
+        ]
+    },
+    "88": {
+        "question": "Even though uncle Barry drinks like a fish, he ...",
+        "answers": [
+            "Never looks drunk",
+            "Never drinks alcohol",
+            "Never drinks much",
+            "Never swims"
+        ]
+    },
+    "89": {
+        "question": "Look at Larry - he's dead to the world. He must be ...",
+        "answers": [
+            "Really tired",
+            "Really sick",
+            "Really lazy",
+            "Really happy"
+        ]
+    },
+    "90": {
+        "question": "I wonder if Mike realises he's digging his own grave by  ...",
+        "answers": [
+            "Cheating on his taxes",
+            "Paying all his taxes",
+            "Complaining about his taxes",
+            "Paying double for his taxes"
+        ]
+    },
+    "91": {
+        "question": "Georgina says she finds it difficult to blow her own horn because she is ...",
+        "answers": [
+            "A very shy person",
+            "Not very musical",
+            "Very proud of herself",
+            "Not having any horn"
+        ]
+    },
+    "92": {
+        "question": "The accused man said it was music to his ears when the judge said ...",
+        "answers": [
+            "Not guilty",
+            "Guilty",
+            "Life without parole",
+            "Sentence to death"
+        ]
+    },
+    "93": {
+        "question": "When I heard the poem, some of the lines rang a bell and ...",
+        "answers": [
+            "I thought I'd heard it somewhere before",
+            "Sounded very beautiful",
+            "Some of them beat a drum",
+            "I have to open the door"
+        ]
+    },
+    "94": {
+        "question": "If something is described as being a drop in the ocean, it is ...",
+        "answers": [
+            "A small part of what's needed",
+            "A huge part of what's needed",
+            "All that's needed",
+            "A must-have part"
+        ]
+    },
+    "95": {
+        "question": "The kids in the hospital had a ray of sunshine in their lives when ...",
+        "answers": [
+            "Some famous footballers visited them",
+            "They were taken to sit outside in the sun",
+            "The nurses checked their blood pressure",
+            "Their medicines run out"
+        ]
+    },
+    "96": {
+        "question": "While they were driving, Louisa said she had to result the call of nature, so Mario ...",
+        "answers": [
+            "Stopped the car when they found a bathroom",
+            "Gave her his phone",
+            "Said they'd go camping on the weekend",
+            "Howled like a wolf"
+        ]
+    },
+    "97": {
+        "question": "Grant felt all at sea because ...",
+        "answers": [
+            "It was his first day at university",
+            "He was enjoying sailing",
+            "He was sick of his job",
+            "He hated the sea"
+        ]
+    },
+    "98": {
+        "question": "I'm trying to go with the flow more and ...",
+        "answers": [
+            "Be more relaxed about things",
+            "Float down the river",
+            "Control every aspect of my life",
+            "Start an arguement"
+        ]
+    },
+    "99": {
+        "question": "Mark's being a pain in the neck this morning, so ...",
+        "answers": [
+            "I'll try to avoid him",
+            "I'll help him with his work",
+            "I'll give him a massage",
+            "I'll buy him a present"
+        ]
+    },
+    "100": {
+        "question": "Mr Murdoch gave Jenny a pat on the back for ...",
+        "answers": [
+            "Doing such a good job",
+            "Being late again",
+            "Failing at the presentation",
+            "Forgetting the files"
+        ]
+    },
+    "101": {
+        "question": "Debbie made a slip of the tongue when she said that ...",
+        "answers": [
+            "Paris is in Spain",
+            "London is in England",
+            "Moscow is in Russia",
+            "Munich is in Germany"
+        ]
+    },
+    "102": {
+        "question": "Losing that job was a blessing in disguise because it meant I ...",
+        "answers": [
+            "Got a much better job",
+            "Lost my house",
+            "Was unemployed for years",
+            "Went bankrupt"
+        ]
+    },
+    "103": {
+        "question": "My friends all called and told me to hang in there after I had ...",
+        "answers": [
+            "A traffic accident",
+            "Left for my honeymoon",
+            "Decided to go sky-diving",
+            "Gone for a date"
+        ]
+    },
+    "104": {
+        "question": "People who keep loaded guns in the house are playing with fire because the guns ...",
+        "answers": [
+            "Could go off accidentally and kill someone",
+            "Might be too heavy",
+            "Would go rusty",
+            "Have expensive bullets"
+        ]
+    },
+    "105": {
+        "question": "In business, it's often necessary to be quick on the draw, but sometimes it's better to ...",
+        "answers": [
+            "Think carefully before doing something",
+            "Do something faster than others",
+            "Be slow to understand what's happening",
+            "Rush into things"
+        ]
+    },
+    "106": {
+        "question": "If you read between the lines, you will ...",
+        "answers": [
+            "Know what the writer really thinks",
+            "Be able to read a lot quicker",
+            "Make up the story for yourself",
+            "Be boring"
+        ]
+    },
+    "107": {
+        "question": "Her name is mud these days because ...",
+        "answers": [
+            "She was caught cheating",
+            "She didn't clean up her room",
+            "She changed it",
+            "She took a mud bath"
+        ]
+    },
+    "108": {
+        "question": "If you say to someone 'You're so full of yourself!' they'll probably feel ...",
+        "answers": [
+            "Upset",
+            "Proud",
+            "Pleasure",
+            "Happy"
+        ]
+    },
+    "109": {
+        "question": "Steve is trying hard to improve at golf because when he plays with his friends he ...",
+        "answers": [
+            "Can't hold his own",
+            "Can hold his own",
+            "Can hold his friends'",
+            "Can't be hold"
+        ]
+    },
+    "110": {
+        "question": "Bob and Jane decided to tie the knot because ...",
+        "answers": [
+            "They loved one another",
+            "It had come undone",
+            "They needed to save money",
+            "They don't want to argue futhermore"
+        ]
+    },
+    "111": {
+        "question": "Marrying James was just a means to an end for Kerry. Her real goal was ...",
+        "answers": [
+            "To be rich",
+            "To be his wife",
+            "To have his children",
+            "To clean his house"
+        ]
+    },
+    "112": {
+        "question": "Doctors say they are sure, beyond a shadow of a doubt, that ...",
+        "answers": [
+            "Cigarettes are bad for you",
+            "Fatty foods are good for you",
+            "Fruits and vegetables are bad for you",
+            "Don't go to the hospital when you're sick"
+        ]
+    },
+    "113": {
+        "question": "I've dotted the i's and crossed the t's, so there ...",
+        "answers": [
+            "Shouldn't be any mistakes",
+            "Will be a few mistakes",
+            "Will be lots of mistakes",
+            "Will all be mistakes"
+        ]
+    },
+    "114": {
+        "question": "I've been in Harry's good books ever since I ...",
+        "answers": [
+            "Fixed his computer",
+            "Crashed his car",
+            "Got drunk at his wedding",
+            "Broke his phone"
+        ]
+    },
+    "115": {
+        "question": "Sam couldn't get a word in edgeways because Cindy was ...",
+        "answers": [
+            "Talking too much",
+            "Playing music",
+            "Listening too much",
+            "Talking too little"
+        ]
+    },
+    "116": {
+        "question": "For which job would 'a jack of all trades' be best suited?",
+        "answers": [
+            "A caretaker in a school",
+            "A dealer in a casino",
+            "A teller in a bank",
+            "Talking too little"
+        ]
+    },
+    "117": {
+        "question": "We started an online business, but after a while it was back to the drawing board because ...",
+        "answers": [
+            "We couldn't make a profit",
+            "We made a lot of money",
+            "We wanted to improve our drawing",
+            "We were too successful"
+        ]
+    },
+    "118": {
+        "question": "A journalist is digging up dirt on a politician in order to ...",
+        "answers": [
+            "Damage the politician's image",
+            "Help the politician's campaign",
+            "Increase the politician's popularity",
+            "He want to plant trees"
+        ]
+    },
+    "119": {
+        "question": "You can see that Mike's got a soft spot for dogs. Whenever he sees one, he ...",
+        "answers": [
+            "Pats it on the head",
+            "Kicks it",
+            "Runs away",
+            "Keeps away from it"
+        ]
+    },
+    "120": {
+        "question": "Monique has decided to take the plunge and ...",
+        "answers": [
+            "Start up her own business",
+            "Keep her job for a while",
+            "Put all her money in the bank",
+            "Pay all the taxes"
+        ]
+    },
+    "121": {
+        "question": "We'll have to leave the list of guests we're inviting to our wedding up in the air until we know ...",
+        "answers": [
+            "How many we can invite",
+            "What the weather will be like",
+            "If any are of them are afraid of heights",
+            "How to land it down"
+        ]
+    }
+}

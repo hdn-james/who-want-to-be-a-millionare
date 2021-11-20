@@ -77,13 +77,16 @@ class UI_RegisterScreen(object):
         username = self.inputName.text()
         #check username
         err = checkUsername(name=username)
-        if err:
+        if err != None:
             self.dialog.setMessage(err)
             self.dialog.show()
             self.dialog.activateWindow()
             self.dialog.raise_()
-    
-        #ui = gui.screen.UI_LoadingScreen()
-        ui = gui.screen.UI_QuestionScreen()
-        ui.setupUi(MainWindow)
-        MainWindow.show()
+
+        else:
+            #ui = gui.screen.UI_LoadingScreen()
+            ui = gui.screen.UI_QuestionScreen()
+            ui.setupUi(MainWindow)
+            MainWindow.show() 
+        
+        

@@ -4,36 +4,10 @@ import json
 import io
 import struct
 import random
+from import_database import read_correct_answer, read_questions
 
-request_search = {
-    "1": {
-        "question": "A calf is the young of which animal?",
-        "answers": [
-            "Cow",
-            "Cat",
-            "Goat",
-            "Gorilla"
-        ]
-    },
-    "2": {
-        "question": "A computer-game hero is Sonic the what?",
-        "answers": [
-            "Hedgehog",
-            "Polecat",
-            "Aardvark",
-            "Muskrat"
-        ]
-    },
-    "3": {
-        "question": "A hare in which month is said to be mad?",
-        "answers": [
-            "March",
-            "July",
-            "April",
-            "August"
-        ]
-    }
-}
+questions_data = read_questions()
+correct_answer_data = read_correct_answer()
 
 
 class Message:
@@ -116,8 +90,8 @@ class Message:
     def _create_response_json_content(self):
         action = self.request.get("action")
         if action == "get_question":
-            query = str(random.randint(1, 3))
-            answer = request_search.get(query) or f'No match for "{query}".'
+            query = str(random.randint(1, 121))
+            answer = questions_data.get(query) or f'No match for "{query}".'
             content = {"result": answer}
         elif action == "join":
             # implement join action here

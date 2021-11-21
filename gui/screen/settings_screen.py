@@ -12,8 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 import gui.screen
 import configuration
+import os
 
-url = "./who-want-to-be-a-millionare/gui/" 
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class UI_SettingsScreen(object):
     def setupUi(self, MainWindow):
@@ -27,7 +28,7 @@ class UI_SettingsScreen(object):
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(200, 290, 221, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(url + "images/volume.png"))
+        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/volume.png")))
         self.title.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.title.setObjectName("title")
         

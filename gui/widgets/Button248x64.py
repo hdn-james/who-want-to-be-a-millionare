@@ -1,7 +1,8 @@
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QPushButton
+import os
 
-url = "./who-want-to-be-a-millionare/gui/"
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class Button248x64(QPushButton):
     mouseHover = QtCore.pyqtSignal(bool)
@@ -18,7 +19,7 @@ class Button248x64(QPushButton):
         
     def setImage(self, path):
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(url + path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(os.path.join(url, path)), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setIcon(icon)
         self.setIconSize(QtCore.QSize(248, 64))
 

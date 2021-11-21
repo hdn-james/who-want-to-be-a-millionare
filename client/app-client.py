@@ -56,7 +56,7 @@ start_connection(host, port, request)
 
 try:
     while True:
-        events = sel.select(timeout=1)
+        events = sel.select(timeout=None)
         for key, mask in events:
             message = key.data
             try:
@@ -68,6 +68,7 @@ try:
                 # )
                 # message.close()
                 pass
+
         # Check for a socket being monitored to continue.
         if not sel.get_map():
             break

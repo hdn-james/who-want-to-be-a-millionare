@@ -1,3 +1,4 @@
+from posixpath import lexists
 import sys
 import selectors
 import json
@@ -108,11 +109,16 @@ class Message:
             content = {"result": answer}
         elif action == "join":
             username = self.request["value"]
-            player = create_new_player(username, self.addr[1])
-            list_player[self.addr[1]] = player
-            print(list_player)
-            print("total:", len(list_player) - 1, "players")
-            content = {"result": f"{username} accepted"}
+            if list_player.get(username):
+                print("exists")
+                content = {"result": f"{username} not accepted"}
+            else:
+                player = create_new_player(username, self.addr[1])
+                list_player[username] = player
+                print(list_player)
+                print("total:", len(list_player) - 1, "players")
+                content = {"result": f"{username} accepted"}
+
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"

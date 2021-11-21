@@ -17,6 +17,9 @@ class Message:
         self._jsonheader_len = None
         self.jsonheader = None
         self.response = None
+    
+    def set_request(self, new_request):
+        self.request = new_request
 
     def _set_selector_events_mask(self, mode):
         """Set selector to listen for events: mode is 'r', 'w', or 'rw'."""

@@ -11,7 +11,7 @@ sel = selectors.DefaultSelector()
 
 cookie = get_cookie()
 
-list_actions = ["get_question", "join", "answer_question"]
+list_actions = ["get_question", "join", "answer_question" ,"next_question"]
 
 
 def create_request(action, value):

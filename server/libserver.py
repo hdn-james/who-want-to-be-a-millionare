@@ -17,7 +17,8 @@ player_data = {
         "name": "username",
         "questions": [1, 2, 3, 4],
         'answers': ["", "", "", ""],
-        "ingame": True
+        "ingame": True,
+        "order": 0
     }
 }
 
@@ -45,7 +46,6 @@ def check_username_valid(username):
 def check_exist_username(username):
     list_player = player_data.values()
     for player in list_player:
-        print(player.get("name"))
         if player.get("name") == username:
             return True
     return False
@@ -139,35 +139,43 @@ class Message:
             query = str(random.randint(1, 121))
             ques.append(query)
             print(player)
-            answer = questions_data.get(query) or f'No match for "{query}".'
+            answer = questions_data.get(query)
             content = {"result": answer}
 
         # action join
         elif action == "join":
-            req = self.request["value"].split('_')
+            req = self.request["value"].split('+')
             username = req[0]
             cookie = req[1]
             if not check_username_valid(username) or check_exist_username(username):
-                content = {"result": "no"}
+                content = {"result": "no,-1"}
             else:
                 player = create_new_player(username, cookie)
                 player_data[cookie] = dict(
-                    player=player, name=username, questions=[], answers=[], ingame=True)
+                    player=player, name=username, questions=[], answers=[], ingame=True, order=len(player_data))
                 print("total:", len(player_data) - 1, "players")
-                content = {"result": "yes"}
+                content = {"result": f"yes,{len(player_data) - 1}"}
 
         # action answer_question
         elif action == 'answer_question':
-            cookie, num_ques, ans = self.request.get("value").split('_')
+            cookie, num_ques, ans = self.request.get("value").split('+')
 
             player = player_data.get(cookie)
             answer = player["answers"]
-            answer.append(answer)
+            answer.append(ans)
             if (correct_answer_data[player.get("questions")[-1]] == ans):
                 content = {"result": "true"}
             else:
                 player["ingame"] = False
                 content = {"result": "false"}
+
+        # action next_question
+        elif action == 'next_question':
+            cookie = self.request.get('value')
+            player = player_data.get(cookie)
+            answer = player["answers"]
+            answer.append("NEXT_QUESTION")
+            content = {"result": "true"}
 
         # else
         else:

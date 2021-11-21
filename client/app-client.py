@@ -4,26 +4,18 @@ import sys
 import socket
 import selectors
 import traceback
-
+from cookie import get_cookie
 import libclient
 
 sel = selectors.DefaultSelector()
 
+cookie = get_cookie()
+
+list_actions = ["get_question", "join", "answer_question"]
+
 
 def create_request(action, value):
-    if action == "get_question":
-        return dict(
-            type="text/json",
-            encoding="utf-8",
-            content=dict(action=action),
-        )
-    elif action == 'join':
-        return dict(
-            type="text/json",
-            encoding="utf-8",
-            content=dict(action=action, value=value),
-        )
-    elif action == 'answer_question':
+    if action in list_actions:
         return dict(
             type="text/json",
             encoding="utf-8",
@@ -48,34 +40,29 @@ def start_connection(host, port, request):
     sel.register(sock, events, data=message)
 
 
-if sys.argv[1] != 'get_question':
-    if len(sys.argv) != 3:
-        print("usage:", sys.argv[0], "<action> <value>")
-        sys.exit(1)
+if len(sys.argv) != 3:
+    print("usage:", sys.argv[0], "<action> <value>")
+    sys.exit(1)
+
 
 host, port = '127.0.0.1', 65432
-action, value = sys.argv[1], None
-if action != 'get_question':
-    value = sys.argv[2]
+action, value = sys.argv[1], sys.argv[2]
 request = create_request(action, value)
 start_connection(host, port, request)
 
 try:
     while True:
-        events = sel.select(timeout=None)
+        events = sel.select(timeout=1)
         for key, mask in events:
             message = key.data
             try:
                 message.process_events(mask)
             except Exception:
-                # print(
-                #     "main: error: exception for",
-                #     f"{message.addr}:\n{traceback.format_exc()}",
-                # )
-                # message.close()
-                pass
-
-        # Check for a socket being monitored to continue.
+                print(
+                    "main: error: exception for",
+                    f"{message.addr}:\n{traceback.format_exc()}",
+                )
+                message.close()
         if not sel.get_map():
             break
 except KeyboardInterrupt:

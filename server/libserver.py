@@ -1,9 +1,10 @@
-from posixpath import lexists
+
 import sys
 import selectors
 import json
 import io
 import struct
+import re
 import random
 from import_database import read_correct_answer, read_questions
 from models.player import Player
@@ -11,11 +12,12 @@ from models.player import Player
 questions_data = read_questions()
 correct_answer_data = read_correct_answer()
 player_data = {
-    "admin": {
+    "cookie": {
         "player": "admin",
-        "port": "port",
+        "name": "username",
         "questions": [1, 2, 3, 4],
         'answers': ["", "", "", ""],
+        "ingame": True
     }
 }
 
@@ -24,9 +26,29 @@ def count_players():
     return len(player_data)-1
 
 
-def create_new_player(username, port):
-    new_player = Player(username=username, port=port)
+def create_new_player(username, cookie):
+    new_player = Player(username=username, cookie=cookie)
     return new_player
+
+
+def check_username_valid(username):
+    if len(username) > 10:
+        return False
+    pattern = "[a-zA-Z0-9_]"
+    for c in username:
+        result = re.match(pattern, c)
+        if not result:
+            return False
+    return True
+
+
+def check_exist_username(username):
+    list_player = player_data.values()
+    for player in list_player:
+        print(player.get("name"))
+        if player.get("name") == username:
+            return True
+    return False
 
 
 class Message:
@@ -78,8 +100,8 @@ class Message:
             else:
                 self._send_buffer = self._send_buffer[sent:]
                 # Close when the buffer is drained. The response has been sent.
-                # if sent and not self._send_buffer:
-                #     self.close()
+                if sent and not self._send_buffer:
+                    self.close()
 
     def _json_encode(self, obj, encoding):
         return json.dumps(obj, ensure_ascii=False).encode(encoding)
@@ -108,31 +130,46 @@ class Message:
 
     def _create_response_json_content(self):
         action = self.request.get("action")
+
+        # action get_question
         if action == "get_question":
+            cookie = self.request["value"]
+            player = player_data.get(cookie)
+            ques = player["questions"]
             query = str(random.randint(1, 121))
+            ques.append(query)
+            print(player)
             answer = questions_data.get(query) or f'No match for "{query}".'
             content = {"result": answer}
+
+        # action join
         elif action == "join":
-            username = self.request["value"]
-            if player_data.get(username):
-                print("exists")
-                content = {"result": f"{username} not accepted"}
+            req = self.request["value"].split('_')
+            username = req[0]
+            cookie = req[1]
+            if not check_username_valid(username) or check_exist_username(username):
+                content = {"result": "no"}
             else:
-                player = create_new_player(username, self.addr[1])
-                player_data[username] = dict(
-                    player=player, port=self.addr[1], questions=[], answers=[])
-                print(player_data)
+                player = create_new_player(username, cookie)
+                player_data[cookie] = dict(
+                    player=player, name=username, questions=[], answers=[], ingame=True)
                 print("total:", len(player_data) - 1, "players")
-                content = {"result": f"{username} accepted"}
+                content = {"result": "yes"}
+
+        # action answer_question
         elif action == 'answer_question':
-            ans = self.request.get("value").split('_')
-            list_ans = player_data[ans[0]].get("answers")
-            list_ans.append(ans[2])
-            print(list_ans)
-            if (correct_answer_data[ans[1]] == ans[2]):
+            cookie, num_ques, ans = self.request.get("value").split('_')
+
+            player = player_data.get(cookie)
+            answer = player["answers"]
+            answer.append(answer)
+            if (correct_answer_data[player.get("questions")[-1]] == ans):
                 content = {"result": "true"}
             else:
+                player["ingame"] = False
                 content = {"result": "false"}
+
+        # else
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"
@@ -178,6 +215,7 @@ class Message:
                 self.create_response()
 
         self._write()
+        # self.response_created = False
 
     def close(self):
         print("closing connection to", self.addr)

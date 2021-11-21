@@ -1,16 +1,13 @@
 class Player():
-    def __init__(self, username, port):
+    def __init__(self, username, cookie):
         self.username = username
-        self.port = port
+        self.cookie = cookie
         self.score = 0
         self.isPass = True
         self.isWin = True
 
     def get_username(self):
         return self.username
-
-    def get_port(self):
-        return self.port
 
     def get_score(self):
         return self.score

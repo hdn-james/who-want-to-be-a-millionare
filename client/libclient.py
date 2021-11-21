@@ -17,7 +17,7 @@ class Message:
         self._jsonheader_len = None
         self.jsonheader = None
         self.response = None
-    
+
     def set_request(self, new_request):
         self.request = new_request
 
@@ -208,4 +208,4 @@ class Message:
             )
             self._process_response_binary_content()
         # Close when response has been processed
-        # self.close()
+        self.close()

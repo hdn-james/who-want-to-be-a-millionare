@@ -1,11 +1,7 @@
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import QLabel, QTextBrowser
-
-url = "./who-want-to-be-a-millionare/gui/"
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtWidgets import QLabel
 
 class Answer(QLabel):
-    clicked = QtCore.pyqtSignal()
-
     def __init__(self, parent=None):
         QLabel.__init__(self, parent)
         self.resize(481, 61)
@@ -17,8 +13,10 @@ class Answer(QLabel):
                                color: #5B5B5B;
                                padding: 8px; 
                                font-size: 14px; ''')
+        
+    clicked = QtCore.pyqtSignal()
 
-    def mousePressEvent(self, ev):
+    def mousePressEvent(self, event):
         self.clicked.emit()
         
     def isChoose(self, bool):

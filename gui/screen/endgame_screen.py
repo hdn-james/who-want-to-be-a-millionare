@@ -10,7 +10,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.RankingTable import RankingTable
-url = "./who-want-to-be-a-millionare/gui/"
+import os
+
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class UI_EndgameScreen(object):
     def setupUi(self, MainWindow):
@@ -25,7 +27,7 @@ class UI_EndgameScreen(object):
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)
         self.titleInformation.setGeometry(QtCore.QRect(0, 50, 1280, 100))
         self.titleInformation.setText("")
-        self.titleInformation.setPixmap(QtGui.QPixmap(url + "images/leader-board.png"))
+        self.titleInformation.setPixmap(QtGui.QPixmap(os.path.join(url, "images/leader-board.png")))
         self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
         self.titleInformation.setObjectName("titleInformation")
         

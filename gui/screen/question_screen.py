@@ -12,8 +12,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.Button64x64 import Button64x64
 from gui.widgets.Answer import Answer
+import os
+import time
 
-url = "./who-want-to-be-a-millionare/gui/"
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/") 
+totalTime = 60
 
 class UI_QuestionScreen(object):
     def setupUi(self, MainWindow):
@@ -22,7 +25,6 @@ class UI_QuestionScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #title
         self.title = QtWidgets.QLabel(self.centralwidget)
@@ -98,7 +100,7 @@ class UI_QuestionScreen(object):
         self.score = QtWidgets.QLabel(self.centralwidget)
         self.score.setGeometry(QtCore.QRect(20, 20, 100, 42))
         self.score.setText("")
-        self.score.setPixmap(QtGui.QPixmap(url + "images/score.png"))
+        self.score.setPixmap(QtGui.QPixmap(os.path.join(url, "images/score.png")))
         self.score.setScaledContents(True)
         self.score.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.score.setObjectName("score")
@@ -120,19 +122,25 @@ class UI_QuestionScreen(object):
         self.countdownTimer.setStyleSheet('''
                                                 QProgressBar{
                                                     border: solid grey;
-                                                    border-radius: 10px;
+                                                    border-radius: 5px;
                                                     color: black;
                                                 }
 
                                                 QProgressBar::chunk {
                                                     background-color: #05B8CC;
-                                                    border-radius :10px;
+                                                    border-radius: 5px;
                                                 }
                                           ''')
-        self.countdownTimer.setMaximum(60)
-        self.countdownTimer.setProperty("value", 10)
+        self.countdownTimer.setMaximum(totalTime)
+        self.countdownTimer.setProperty("value", 0)
         self.countdownTimer.setTextVisible(False)
         self.countdownTimer.setObjectName("countdownTimer")
+        
+        self.setDurationTime()
+        
+        self.timer = QtCore.QTimer(self.centralwidget)
+        self.timer.timeout.connect(self.runCountdown)
+        self.timer.start(1000)
         
         #result
         self.result = QtWidgets.QLabel(self.centralwidget)
@@ -140,12 +148,14 @@ class UI_QuestionScreen(object):
         self.result.setText("")
         self.result.setAlignment(QtCore.Qt.AlignCenter)
         self.result.setObjectName("result")
+        self.result.hide()
         
         #setup
         MainWindow.setCentralWidget(self.centralwidget)
-
+        
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -157,6 +167,7 @@ class UI_QuestionScreen(object):
         if (isPass):
             self.passBtn.show()
         else:
+            print("hello")
             self.passBtn.hide()
         
     #main player or not: isMain to check main player or not, isPass to check pass button
@@ -165,38 +176,48 @@ class UI_QuestionScreen(object):
             self.okBtn.show()
             self.isPassLeft(isPass)
         else: 
+            print("hello")
             self.okBtn.hide()
             self.passBtn.hide()
             
     #show result
     def showResult(self, result):
         if result: 
-            self.result.setPixmap(QtGui.QPixmap(url + "images/correct.png"))
+            self.result.setPixmap(QtGui.QPixmap(os.path.join(url, "images/correct.png")))
+            self.result.show()
         else:
-            self.result.setPixmap(QtGui.QPixmap(url + "images/wrong.png"))
-        self.result.show()
-        self.result.activateWindow()
-        self.result.raise_()
+            self.result.setPixmap(QtGui.QPixmap(os.path.join(url, "images/wrong.png")))
+            self.result.show()
+
 
     #click button
     def handleClickPassButton(self):
+        self.timer.stop()
         print("Pass!")
         
     def handleClickExitButton(self, MainWindow):
         MainWindow.close()
         
     def handleClickOKButton(self):
-        print("OK!")
+        self.timer.stop()
         #checkResult --> result = checkResult
         result = True
         self.showResult(result)
     
-    #value    
+    #score    
     def setScore(self, score):
         self.inputScore.setText(score)
         
-    def setTimerValue(self, time):
-        self.countdownTimer.setValue(time)
+    #time   
+    def setDurationTime(self):
+        self.time_left_int = totalTime
+        
+    def runCountdown(self):
+        self.time_left_int -= 1
+        print(self.time_left_int)
+        self.countdownTimer.setValue(totalTime - self.time_left_int)
+        if self.time_left_int == 0:
+            self.timer.stop()
         
     #answer
     def handleChooseA(self):

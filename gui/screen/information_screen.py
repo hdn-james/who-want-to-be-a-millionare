@@ -10,8 +10,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
+import os
 
-url = "./who-want-to-be-a-millionare/gui/"
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class UI_InformationScreen(object):
     def setupUi(self, MainWindow):
@@ -26,7 +27,7 @@ class UI_InformationScreen(object):
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)
         self.titleInformation.setGeometry(QtCore.QRect(0, 150, 1280, 100))
         self.titleInformation.setText("")
-        self.titleInformation.setPixmap(QtGui.QPixmap(url + "images/match-information.png"))
+        self.titleInformation.setPixmap(QtGui.QPixmap(os.path.join(url, "images/match-information.png")))
         self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
         self.titleInformation.setObjectName("titleInformation")
         
@@ -34,19 +35,19 @@ class UI_InformationScreen(object):
         self.numOfQuestions = QtWidgets.QLabel(self.centralwidget)
         self.numOfQuestions.setGeometry(QtCore.QRect(300, 300, 396, 48))
         self.numOfQuestions.setText("")
-        self.numOfQuestions.setPixmap(QtGui.QPixmap(url + "images/num-question.png"))
+        self.numOfQuestions.setPixmap(QtGui.QPixmap(os.path.join(url, "images/num-question.png")))
         self.numOfQuestions.setScaledContents(True)
         self.numOfQuestions.setObjectName("numOfQuestions")
         self.numOfPlayers = QtWidgets.QLabel(self.centralwidget)
         self.numOfPlayers.setGeometry(QtCore.QRect(300, 400, 352, 48))
         self.numOfPlayers.setText("")
-        self.numOfPlayers.setPixmap(QtGui.QPixmap(url + "images/num-player.png"))
+        self.numOfPlayers.setPixmap(QtGui.QPixmap(os.path.join(url, "images/num-player.png")))
         self.numOfPlayers.setScaledContents(True)
         self.numOfPlayers.setObjectName("numOfPlayers")
         self.playerOrder = QtWidgets.QLabel(self.centralwidget)
         self.playerOrder.setGeometry(QtCore.QRect(300, 500, 204, 47))
         self.playerOrder.setText("")
-        self.playerOrder.setPixmap(QtGui.QPixmap(url + "images/order.png"))
+        self.playerOrder.setPixmap(QtGui.QPixmap(os.path.join(url, "images/order.png")))
         self.playerOrder.setScaledContents(True)
         self.playerOrder.setObjectName("playerOrder")
         

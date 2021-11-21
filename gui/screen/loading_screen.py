@@ -10,8 +10,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import gui.screen
+import os
 
-url = "./who-want-to-be-a-millionare/gui/" 
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class UI_LoadingScreen(object):
     def setupUi(self, MainWindow):
@@ -25,7 +26,7 @@ class UI_LoadingScreen(object):
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(0, 300, 1280, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(url + "images/loading.png"))
+        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/loading.png")))
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setObjectName("title")
         
@@ -36,13 +37,13 @@ class UI_LoadingScreen(object):
         self.loading.setStyleSheet('''
                                         QProgressBar{
                                             border: solid grey;
-                                            border-radius: 30px;
+                                            border-radius: 10px;
                                             color: black;
                                         }
 
                                         QProgressBar::chunk {
                                             background-color: #83C5EA;
-                                            border-radius: 30px;
+                                            border-radius: 10px;
                                         }
                                     ''')
         self.loading.setMaximum(100)

@@ -14,8 +14,6 @@ from gui.widgets.DialogFailUsername import DialogFailUsername
 from server.utils.username import checkUsername
 import gui.screen
 
-url = "./who-want-to-be-a-millionare/gui/"     
-
 class UI_RegisterScreen(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")

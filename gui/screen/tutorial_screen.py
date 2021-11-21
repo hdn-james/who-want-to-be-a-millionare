@@ -11,8 +11,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 import gui.screen
+import os
 
-url = "./who-want-to-be-a-millionare/gui/"
+url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
 
 class UI_TutorialScreen(object):
     def setupUi(self, MainWindow):
@@ -21,13 +22,12 @@ class UI_TutorialScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
         
         #title
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(0, 50, 1280, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(url + "images/how-to-play.png"))
+        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/how-to-play.png")))
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setObjectName("title")
         
@@ -35,7 +35,7 @@ class UI_TutorialScreen(object):
         self.information = QtWidgets.QLabel(self.centralwidget)
         self.information.setGeometry(QtCore.QRect(0, 160, 1280, 500))
         self.information.setText("")
-        self.information.setPixmap(QtGui.QPixmap(url + "images/game-tutorial.png"))
+        self.information.setPixmap(QtGui.QPixmap(os.path.join(url, "images/game-tutorial.png")))
         self.information.setAlignment(QtCore.Qt.AlignCenter)
         self.information.setObjectName("information")
         

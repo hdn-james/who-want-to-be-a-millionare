@@ -5,6 +5,7 @@ Internetworking Protocol - Socket Programing
   ```
   python3 -m venv venv
   source venv/bin/activate
+  or .\venv\Scripts\activate (for Window)
   ```
 * Libraries backup
   ```

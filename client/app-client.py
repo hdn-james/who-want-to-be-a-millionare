@@ -56,11 +56,12 @@ try:
             try:
                 message.process_events(mask)
             except Exception:
-                print(
-                    "main: error: exception for",
-                    f"{message.addr}:\n{traceback.format_exc()}",
-                )
-                message.close()
+                # print(
+                #     "main: error: exception for",
+                #     f"{message.addr}:\n{traceback.format_exc()}",
+                # )
+                # message.close()
+                pass
         # Check for a socket being monitored to continue.
         if not sel.get_map():
             break

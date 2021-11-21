@@ -36,11 +36,12 @@ try:
                 try:
                     message.process_events(mask)
                 except Exception:
-                    print(
-                        "main: error: exception for",
-                        f"{message.addr}:\n{traceback.format_exc()}",
-                    )
-                    message.close()
+                    # print(
+                    #     "main: error: exception for",
+                    #     f"{message.addr}:\n{traceback.format_exc()}",
+                    # )
+                    # message.close()
+                    pass
 except KeyboardInterrupt:
     print("caught keyboard interrupt, exiting")
 finally:

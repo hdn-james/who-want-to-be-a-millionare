@@ -4,10 +4,20 @@ import json
 import io
 import struct
 import random
+from typing import NewType
 from import_database import read_correct_answer, read_questions
+from models.player import Player
 
 questions_data = read_questions()
 correct_answer_data = read_correct_answer()
+list_player = {
+    "admin": "admin"
+}
+
+
+def create_new_player(username, port):
+    new_player = Player(username=username, port=port)
+    return new_player
 
 
 class Message:
@@ -94,9 +104,12 @@ class Message:
             answer = questions_data.get(query) or f'No match for "{query}".'
             content = {"result": answer}
         elif action == "join":
-            # implement join action here
-            # ...
-            pass
+            username = self.request["value"]
+            player = create_new_player(username, self.addr[1])
+            list_player[self.addr[1]] = player
+            print(list_player)
+            print("total:", len(list_player) - 1, "players")
+            content = {"result": f"{username} accepted"}
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"

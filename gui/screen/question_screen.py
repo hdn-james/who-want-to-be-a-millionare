@@ -131,7 +131,7 @@ class UI_QuestionScreen(object):
                                                     border-radius: 5px;
                                                 }
                                           ''')
-        self.countdownTimer.setMaximum(60)
+        self.countdownTimer.setMaximum(totalTime)
         self.countdownTimer.setProperty("value", 0)
         self.countdownTimer.setTextVisible(False)
         self.countdownTimer.setObjectName("countdownTimer")

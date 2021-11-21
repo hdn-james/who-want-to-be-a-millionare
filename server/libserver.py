@@ -118,7 +118,12 @@ class Message:
                 print(list_player)
                 print("total:", len(list_player) - 1, "players")
                 content = {"result": f"{username} accepted"}
-
+        elif action == 'answer_question':
+            ans = self.request.get("value").split('_')
+            if (correct_answer_data[ans[0]] == ans[1]):
+                content = {"result": "true"}
+            else:
+                content = {"result": "false"}
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"

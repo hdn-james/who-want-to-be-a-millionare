@@ -6,6 +6,18 @@ class Player():
         self.isPass = True
         self.isWin = True
 
+    def get_username(self):
+        return self.username
+
+    def get_port(self):
+        return self.port
+
+    def get_score(self):
+        return self.score
+
+    def get_status(self):
+        return (self.isPass, self.isWin)
+
     def addScore(self, score):
         self.score += score
 

@@ -4,7 +4,6 @@ import json
 import io
 import struct
 import random
-from typing import NewType
 from import_database import read_correct_answer, read_questions
 from models.player import Player
 
@@ -13,6 +12,10 @@ correct_answer_data = read_correct_answer()
 list_player = {
     "admin": "admin"
 }
+
+
+def count_players():
+    return len(list_player)-1
 
 
 def create_new_player(username, port):

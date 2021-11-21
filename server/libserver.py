@@ -10,13 +10,18 @@ from models.player import Player
 
 questions_data = read_questions()
 correct_answer_data = read_correct_answer()
-list_player = {
-    "admin": "admin"
+player_data = {
+    "admin": {
+        "player": "admin",
+        "port": "port",
+        "questions": [1, 2, 3, 4],
+        'answers': ["", "", "", ""],
+    }
 }
 
 
 def count_players():
-    return len(list_player)-1
+    return len(player_data)-1
 
 
 def create_new_player(username, port):
@@ -109,18 +114,22 @@ class Message:
             content = {"result": answer}
         elif action == "join":
             username = self.request["value"]
-            if list_player.get(username):
+            if player_data.get(username):
                 print("exists")
                 content = {"result": f"{username} not accepted"}
             else:
                 player = create_new_player(username, self.addr[1])
-                list_player[username] = player
-                print(list_player)
-                print("total:", len(list_player) - 1, "players")
+                player_data[username] = dict(
+                    player=player, port=self.addr[1], questions=[], answers=[])
+                print(player_data)
+                print("total:", len(player_data) - 1, "players")
                 content = {"result": f"{username} accepted"}
         elif action == 'answer_question':
             ans = self.request.get("value").split('_')
-            if (correct_answer_data[ans[0]] == ans[1]):
+            list_ans = player_data[ans[0]].get("answers")
+            list_ans.append(ans[2])
+            print(list_ans)
+            if (correct_answer_data[ans[1]] == ans[2]):
                 content = {"result": "true"}
             else:
                 content = {"result": "false"}

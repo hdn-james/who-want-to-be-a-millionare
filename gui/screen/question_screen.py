@@ -15,8 +15,8 @@ from gui.widgets.Answer import Answer
 import os
 import time
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/") 
-totalTime = 60
+url = os.path.dirname("./gui/")
+totalTime = 20
 
 class UI_QuestionScreen(object):
     def setupUi(self, MainWindow):

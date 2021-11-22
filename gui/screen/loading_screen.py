@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import gui.screen
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+url = os.path.dirname("./gui/")
 
 class UI_LoadingScreen(object):
     def setupUi(self, MainWindow):

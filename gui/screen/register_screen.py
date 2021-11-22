@@ -73,18 +73,6 @@ class UI_RegisterScreen(object):
         
     def handleSubmitUsername(self, MainWindow):
         username = self.inputName.text()
-        #check username
-        err = checkUsername(name=username)
-        if err != None:
-            self.dialog.setMessage(err)
-            self.dialog.show()
-            self.dialog.activateWindow()
-            self.dialog.raise_()
-
-        else:
-            #ui = gui.screen.UI_LoadingScreen()
-            ui = gui.screen.UI_QuestionScreen()
-            ui.setupUi(MainWindow)
-            MainWindow.show() 
+        #wait 4 response
         
         

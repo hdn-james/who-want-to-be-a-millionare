@@ -12,7 +12,7 @@ from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.RankingTable import RankingTable
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+url = os.path.dirname("./gui/")
 
 class UI_EndgameScreen(object):
     def setupUi(self, MainWindow):

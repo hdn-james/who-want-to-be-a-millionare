@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+url = os.path.dirname("./gui/")
 
 class UI_InformationScreen(object):
     def setupUi(self, MainWindow):

@@ -25,7 +25,7 @@ class UI_MainMenu(object):
         self.gameName = QtWidgets.QLabel(self.centralwidget)
         self.gameName.setGeometry(QtCore.QRect(0, -100, 1280, 800))
         self.gameName.setText("")
-        pixmap = QtGui.QPixmap("./who-want-to-be-a-millionare/gui/images/game-name.png")
+        pixmap = QtGui.QPixmap("./gui/images/game-name.png")
         pixmap = pixmap.scaledToWidth(900)
         self.gameName.setPixmap(pixmap)
         self.gameName.setAlignment(QtCore.Qt.AlignCenter)

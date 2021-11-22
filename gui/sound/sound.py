@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtMultimedia
 import configuration
 
-current_dir = "./who-want-to-be-a-millionare/gui/musics/" 
+current_dir = "./gui/musics/" 
     
 def playBackground():
     musics = configuration.musics

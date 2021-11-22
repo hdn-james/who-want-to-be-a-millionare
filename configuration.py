@@ -1,9 +1,6 @@
 from PyQt5 import QtCore, QtMultimedia
 
-def init():
-    global players
-    players = []
-    
+def init():    
     global musics
     musics = {
         'background': 'test.wav',

@@ -14,7 +14,7 @@ import gui.screen
 import configuration
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+url = os.path.dirname("./gui/")
 
 class UI_SettingsScreen(object):
     def setupUi(self, MainWindow):

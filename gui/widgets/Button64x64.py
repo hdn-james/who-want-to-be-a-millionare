@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QPushButton
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+url = os.path.dirname("./gui/")
 
 class Button64x64(QPushButton):
     mouseHover = QtCore.pyqtSignal(bool)

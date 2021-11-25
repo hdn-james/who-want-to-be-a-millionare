@@ -13,6 +13,11 @@ from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.DialogFailUsername import DialogFailUsername
 from server.utils.username import checkUsername
 import gui.screen
+import os
+
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_RegisterScreen(object):
     def setupUi(self, MainWindow):
@@ -21,13 +26,13 @@ class UI_RegisterScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
-        
-        #dialog
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # dialog
         self.dialog = DialogFailUsername(self.centralwidget)
         self.dialog.hide()
-        
-        #text label
+
+        # text label
         self.textLabel = QtWidgets.QLabel(self.centralwidget)
         self.textLabel.setGeometry(QtCore.QRect(240, 310, 400, 25))
         font = QtGui.QFont()
@@ -38,8 +43,8 @@ class UI_RegisterScreen(object):
         self.textLabel.setFont(font)
         self.textLabel.setStyleSheet("color: #1F566D;")
         self.textLabel.setObjectName("textLabel")
-        
-        #input name
+
+        # input name
         self.inputName = QtWidgets.QLineEdit(self.centralwidget)
         self.inputName.setGeometry(QtCore.QRect(225, 350, 800, 50))
         self.inputName.setAutoFillBackground(False)
@@ -52,15 +57,16 @@ class UI_RegisterScreen(object):
                                         font-weight: bold;
                                         color: #1F566D;''')
         self.inputName.setObjectName("inputName")
-        
-        #OK Button
+
+        # OK Button
         self.OKBtn = Button100x100(self.centralwidget)
         self.OKBtn.setName("OKBtn")
-        self.OKBtn.setImage("images/OK-btn.png")
+        self.OKBtn.setImage(os.path.join(image_folder, "./OK-btn.png"))
         self.OKBtn.move(QtCore.QPoint(590, 450))
-        self.OKBtn.clicked.connect(lambda: self.handleSubmitUsername(MainWindow))
-        
-        #setup
+        self.OKBtn.clicked.connect(
+            lambda: self.handleSubmitUsername(MainWindow))
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -70,10 +76,10 @@ class UI_RegisterScreen(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.textLabel.setText(_translate("MainWindow", "ENTER YOUR USERNAME"))
-        
+
     def handleSubmitUsername(self, MainWindow):
         username = self.inputName.text()
-        #check username
+        # check username
         err = checkUsername(name=username)
         if err != None:
             self.dialog.setMessage(err)
@@ -85,6 +91,4 @@ class UI_RegisterScreen(object):
             #ui = gui.screen.UI_LoadingScreen()
             ui = gui.screen.UI_QuestionScreen()
             ui.setupUi(MainWindow)
-            MainWindow.show() 
-        
-        
+            MainWindow.show()

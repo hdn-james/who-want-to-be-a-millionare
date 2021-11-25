@@ -12,7 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import gui.screen
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_LoadingScreen(object):
     def setupUi(self, MainWindow):
@@ -21,16 +23,17 @@ class UI_LoadingScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        
-        #title
+
+        # title
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(0, 300, 1280, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/loading.png")))
+        self.title.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./loading.png")))
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setObjectName("title")
-        
-        #progress bar
+
+        # progress bar
         self.loading = QtWidgets.QProgressBar(self.centralwidget)
         self.loading.setGeometry(QtCore.QRect(190, 400, 901, 61))
         self.loading.setAutoFillBackground(False)
@@ -50,8 +53,7 @@ class UI_LoadingScreen(object):
         self.loading.setProperty("value", 10)
         self.loading.setTextVisible(False)
         self.loading.setObjectName("loading")
-        
-        
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

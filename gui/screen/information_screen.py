@@ -12,7 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from gui.widgets.Button100x100 import Button100x100
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_InformationScreen(object):
     def setupUi(self, MainWindow):
@@ -21,37 +23,41 @@ class UI_InformationScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
-        
-        #title
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # title
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)
         self.titleInformation.setGeometry(QtCore.QRect(0, 150, 1280, 100))
         self.titleInformation.setText("")
-        self.titleInformation.setPixmap(QtGui.QPixmap(os.path.join(url, "images/match-information.png")))
+        self.titleInformation.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./match-information.png")))
         self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
         self.titleInformation.setObjectName("titleInformation")
-        
-        #label
+
+        # label
         self.numOfQuestions = QtWidgets.QLabel(self.centralwidget)
         self.numOfQuestions.setGeometry(QtCore.QRect(300, 300, 396, 48))
         self.numOfQuestions.setText("")
-        self.numOfQuestions.setPixmap(QtGui.QPixmap(os.path.join(url, "images/num-question.png")))
+        self.numOfQuestions.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./num-question.png")))
         self.numOfQuestions.setScaledContents(True)
         self.numOfQuestions.setObjectName("numOfQuestions")
         self.numOfPlayers = QtWidgets.QLabel(self.centralwidget)
         self.numOfPlayers.setGeometry(QtCore.QRect(300, 400, 352, 48))
         self.numOfPlayers.setText("")
-        self.numOfPlayers.setPixmap(QtGui.QPixmap(os.path.join(url, "images/num-player.png")))
+        self.numOfPlayers.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./num-player.png")))
         self.numOfPlayers.setScaledContents(True)
         self.numOfPlayers.setObjectName("numOfPlayers")
         self.playerOrder = QtWidgets.QLabel(self.centralwidget)
         self.playerOrder.setGeometry(QtCore.QRect(300, 500, 204, 47))
         self.playerOrder.setText("")
-        self.playerOrder.setPixmap(QtGui.QPixmap(os.path.join(url, "images/order.png")))
+        self.playerOrder.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./order.png")))
         self.playerOrder.setScaledContents(True)
         self.playerOrder.setObjectName("playerOrder")
-        
-        #input
+
+        # input
         self.inputQuestion = QtWidgets.QLabel(self.centralwidget)
         self.inputQuestion.setGeometry(QtCore.QRect(900, 300, 80, 40))
         font = QtGui.QFont()
@@ -62,9 +68,10 @@ class UI_InformationScreen(object):
         self.inputQuestion.setFont(font)
         self.inputQuestion.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.inputQuestion.setStyleSheet("color: #FBC02D; ")
-        self.inputQuestion.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.inputQuestion.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.inputQuestion.setObjectName("inputQuestion")
-        
+
         self.inputPlayer = QtWidgets.QLabel(self.centralwidget)
         self.inputPlayer.setGeometry(QtCore.QRect(900, 400, 80, 40))
         font = QtGui.QFont()
@@ -75,9 +82,10 @@ class UI_InformationScreen(object):
         self.inputPlayer.setFont(font)
         self.inputPlayer.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.inputPlayer.setStyleSheet("color: #FBC02D; ")
-        self.inputPlayer.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.inputPlayer.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.inputPlayer.setObjectName("inputPlayer")
-        
+
         self.inputOrder = QtWidgets.QLabel(self.centralwidget)
         self.inputOrder.setGeometry(QtCore.QRect(900, 500, 80, 40))
         font = QtGui.QFont()
@@ -88,17 +96,18 @@ class UI_InformationScreen(object):
         self.inputOrder.setFont(font)
         self.inputOrder.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.inputOrder.setStyleSheet("color: #FBC02D; ")
-        self.inputOrder.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.inputOrder.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.inputOrder.setObjectName("inputOrder")
-        
-        #play button
+
+        # play button
         self.playBtn = Button100x100(self.centralwidget)
-        self.playBtn.setImage("images/play-btn.png")
+        self.playBtn.setImage(os.path.join(image_folder, "./play-btn.png"))
         self.playBtn.move(590, 600)
         self.playBtn.setName("playBtn")
         self.playBtn.clicked.connect(self.handleClickPlayButton)
-        
-        #setup
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -110,13 +119,12 @@ class UI_InformationScreen(object):
         self.inputQuestion.setText(_translate("MainWindow", "0"))
         self.inputPlayer.setText(_translate("MainWindow", "0"))
         self.inputOrder.setText(_translate("MainWindow", "0"))
-        
+
     def inputNumber(self, question, player, order):
         self.inputQuestion.setText(str(question))
         self.inputPlayer.setText(str(player))
         self.inputOrder.setText(str(order))
-        
+
     def handleClickPlayButton(self):
         print("Clicked!")
-        #move to waiting screen --> play
-
+        # move to waiting screen --> play

@@ -12,6 +12,11 @@ from PyQt5 import QtCore, QtWidgets, QtGui
 from gui.widgets.Button248x64 import Button248x64
 import gui.screen
 from gui.sound.sound import playCorrect
+import os
+
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_MainMenu(object):
     def setupUi(self, MainWindow):
@@ -19,47 +24,54 @@ class UI_MainMenu(object):
         MainWindow.resize(1280, 960)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
-        
-        #game-name
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # game-name
         self.gameName = QtWidgets.QLabel(self.centralwidget)
         self.gameName.setGeometry(QtCore.QRect(0, -100, 1280, 800))
         self.gameName.setText("")
-        pixmap = QtGui.QPixmap("./who-want-to-be-a-millionare/gui/images/game-name.png")
+        pixmap = QtGui.QPixmap(os.path.join(image_folder, "./game-name.png"))
         pixmap = pixmap.scaledToWidth(900)
         self.gameName.setPixmap(pixmap)
         self.gameName.setAlignment(QtCore.Qt.AlignCenter)
         self.gameName.setObjectName("titleInformation")
-        
-        #start button
+
+        # start button
         self.startBtn = Button248x64(self.centralwidget)
         self.startBtn.setGeometry(QtCore.QRect(280, 550, 248, 64))
         self.startBtn.setName("startBtn")
-        self.startBtn.setImage("images/start-button.png")
-        self.startBtn.clicked.connect(lambda: self.handleClickStart(MainWindow))
-        
-        #settings button
+        self.startBtn.setImage(os.path.join(
+            image_folder, "./start-button.png"))
+        self.startBtn.clicked.connect(
+            lambda: self.handleClickStart(MainWindow))
+
+        # settings button
         self.settingsBtn = Button248x64(self.centralwidget)
         self.settingsBtn.setGeometry(QtCore.QRect(750, 550, 248, 64))
         self.settingsBtn.setName("settingsBtn")
-        self.settingsBtn.setImage("images/settings-button.png")
-        self.settingsBtn.clicked.connect(lambda: self.handleClickSettings(MainWindow))
-        
-        #tutorial button
+        self.settingsBtn.setImage(os.path.join(
+            image_folder, "./settings-button.png"))
+        self.settingsBtn.clicked.connect(
+            lambda: self.handleClickSettings(MainWindow))
+
+        # tutorial button
         self.tutorialBtn = Button248x64(self.centralwidget)
         self.tutorialBtn.setGeometry(QtCore.QRect(280, 680, 248, 64))
         self.tutorialBtn.setName("tutorialBtn")
-        self.tutorialBtn.setImage("images/tutorial-button.png")
-        self.tutorialBtn.clicked.connect(lambda: self.handleClickTutorial(MainWindow))
-        
-        #exit button
+        self.tutorialBtn.setImage(os.path.join(
+            image_folder, "./tutorial-button.png"))
+        self.tutorialBtn.clicked.connect(
+            lambda: self.handleClickTutorial(MainWindow))
+
+        # exit button
         self.exitBtn = Button248x64(self.centralwidget)
         self.exitBtn.setGeometry(QtCore.QRect(750, 680, 248, 64))
         self.exitBtn.setName("exitBtn")
-        self.exitBtn.setImage("images/exit-button.png")
+        self.exitBtn.setImage(os.path.join(
+            image_folder, "./exit-button.png"))
         self.exitBtn.clicked.connect(lambda: self.handleClickExit(MainWindow))
-        
-       #setup
+
+       # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -68,25 +80,24 @@ class UI_MainMenu(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        
+
     def handleClickStart(self, MainWindow):
-        #test
+        # test
         playCorrect()
         #####
         ui = gui.screen.UI_RegisterScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
-        
+
     def handleClickSettings(self, MainWindow):
         ui = gui.screen.UI_SettingsScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
-        
+
     def handleClickTutorial(self, MainWindow):
         ui = gui.screen.UI_TutorialScreen()
         ui.setupUi(MainWindow)
         MainWindow.show()
-        
+
     def handleClickExit(self, MainWindow):
         MainWindow.close()
-   

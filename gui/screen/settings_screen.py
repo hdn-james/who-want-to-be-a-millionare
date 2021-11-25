@@ -14,7 +14,9 @@ import gui.screen
 import configuration
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_SettingsScreen(object):
     def setupUi(self, MainWindow):
@@ -23,16 +25,19 @@ class UI_SettingsScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        
-        #title
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # title
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(200, 290, 221, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/volume.png")))
-        self.title.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.title.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./volume.png")))
+        self.title.setAlignment(QtCore.Qt.AlignLeading |
+                                QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.title.setObjectName("title")
-        
-        #slider
+
+        # slider
         self.volume = QtWidgets.QSlider(self.centralwidget)
         self.volume.setGeometry(QtCore.QRect(210, 390, 851, 22))
         self.volume.setOrientation(QtCore.Qt.Horizontal)
@@ -69,15 +74,16 @@ class UI_SettingsScreen(object):
                                         }
                                       ''')
         self.volume.valueChanged.connect(self.handleChangeVolume)
-        
-        #play button
+
+        # play button
         self.playBtn = Button100x100(self.centralwidget)
         self.playBtn.setName("OKBtn")
-        self.playBtn.setImage("images/play-btn.png")
+        self.playBtn.setImage(os.path.join(image_folder, "./play-btn.png"))
         self.playBtn.move(QtCore.QPoint(590, 450))
-        self.playBtn.clicked.connect(lambda: self.handleClickPlayButton(MainWindow))
-        
-        #setup
+        self.playBtn.clicked.connect(
+            lambda: self.handleClickPlayButton(MainWindow))
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -86,13 +92,12 @@ class UI_SettingsScreen(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        
+
     def handleClickPlayButton(self, MainWindow):
         ui = gui.screen.UI_MainMenu()
         ui.setupUi(MainWindow)
         MainWindow.show()
-        
+
     def handleChangeVolume(self):
         value = self.volume.value() / 100
         configuration.music.setVolume(value)
-

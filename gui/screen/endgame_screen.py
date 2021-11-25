@@ -12,7 +12,9 @@ from gui.widgets.Button100x100 import Button100x100
 from gui.widgets.RankingTable import RankingTable
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_EndgameScreen(object):
     def setupUi(self, MainWindow):
@@ -21,35 +23,37 @@ class UI_EndgameScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        #sself.centralwidget.setStyleSheet("background-color: #D9EEF6;")
-        
-        #title
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # title
         self.titleInformation = QtWidgets.QLabel(self.centralwidget)
         self.titleInformation.setGeometry(QtCore.QRect(0, 50, 1280, 100))
         self.titleInformation.setText("")
-        self.titleInformation.setPixmap(QtGui.QPixmap(os.path.join(url, "images/leader-board.png")))
+        self.titleInformation.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./leader-board.png")))
         self.titleInformation.setAlignment(QtCore.Qt.AlignCenter)
         self.titleInformation.setObjectName("titleInformation")
-        
-        #restart button
+
+        # restart button
         self.restartBtn = Button100x100(self.centralwidget)
         self.restartBtn.setName("restartBtn")
-        self.restartBtn.setImage("images/back-btn.png")
+        self.restartBtn.setImage(os.path.join(image_folder, "./back-btn.png"))
         self.restartBtn.move(QtCore.QPoint(500, 750))
-        
-        #exitBtn
+
+        # exitBtn
         self.exitBtn = Button100x100(self.centralwidget)
         self.exitBtn.setName("exitBtn")
-        self.exitBtn.setImage("images/exit-btn.png")
+        self.exitBtn.setImage(os.path.join(image_folder, "./exit-btn.png"))
         self.exitBtn.move(QtCore.QPoint(700, 750))
         self.exitBtn.clicked.connect(lambda: self.handleClickExit(MainWindow))
-        
-        #table
+
+        # table
         self.rankingTable = RankingTable(self.centralwidget)
         self.rankingTable.createHeading()
-        self.rankingTable.setValue([['1', 'Nhi', '100'], ['2', 'Tan', '50'], ['3', 'Nhan', '0']])
-        
-        #setup
+        self.rankingTable.setValue(
+            [['1', 'Nhi', '100'], ['2', 'Tan', '50'], ['3', 'Nhan', '0']])
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -58,6 +62,6 @@ class UI_EndgameScreen(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        
+
     def handleClickExit(self, MainWindow):
         MainWindow.close()

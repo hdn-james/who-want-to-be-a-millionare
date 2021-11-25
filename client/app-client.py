@@ -6,12 +6,16 @@ import selectors
 import traceback
 from cookie import get_cookie
 import libclient
+from time import sleep
+
 
 sel = selectors.DefaultSelector()
 
 cookie = get_cookie()
 
-list_actions = ["get_question", "join", "answer_question" ,"next_question"]
+list_actions = ["get_question", "join",
+                "answer_question", "next_question", "get_status"]
+host, port = '127.0.0.1', 65432
 
 
 def create_request(action, value):
@@ -40,32 +44,45 @@ def start_connection(host, port, request):
     sel.register(sock, events, data=message)
 
 
-if len(sys.argv) != 3:
-    print("usage:", sys.argv[0], "<action> <value>")
-    sys.exit(1)
+def run():
+    try:
+        while True:
+            events = sel.select(timeout=1)
+            for key, mask in events:
+                message = key.data
+                try:
+                    message.process_events(mask)
+                except Exception:
+                    print(
+                        "main: error: exception for",
+                        f"{message.addr}:\n{traceback.format_exc()}",
+                    )
+                    message.close()
+            if not sel.get_map():
+                break
+    except KeyboardInterrupt:
+        print("caught keyboard interrupt, exiting")
+    finally:
+        sel.close()
 
 
-host, port = '127.0.0.1', 65432
-action, value = sys.argv[1], sys.argv[2]
-request = create_request(action, value)
-start_connection(host, port, request)
+def communication(action, value):
+    request = create_request(action, value)
+    start_connection(host, port, request)
+    run()
 
-try:
-    while True:
-        events = sel.select(timeout=1)
-        for key, mask in events:
-            message = key.data
-            try:
-                message.process_events(mask)
-            except Exception:
-                print(
-                    "main: error: exception for",
-                    f"{message.addr}:\n{traceback.format_exc()}",
-                )
-                message.close()
-        if not sel.get_map():
-            break
-except KeyboardInterrupt:
-    print("caught keyboard interrupt, exiting")
-finally:
-    sel.close()
+
+# join
+# communication("join", '{"cookie":"client", "username":"nhan"}')
+
+# get question
+# communication("get_question", '{"cookie":"client"}')
+
+# answer question
+# communication("answer_question", '{"cookie":"client","answer":"Well organized"}')
+
+# next question
+# communication("next_question", '{"cookie":"client"}')
+
+# get status
+# communication("get_status", '{"cookie":"client"}')

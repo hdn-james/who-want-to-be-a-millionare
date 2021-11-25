@@ -13,7 +13,9 @@ from gui.widgets.Button100x100 import Button100x100
 import gui.screen
 import os
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/")
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
+
 
 class UI_TutorialScreen(object):
     def setupUi(self, MainWindow):
@@ -22,38 +24,43 @@ class UI_TutorialScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        
-        #title
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # title
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(0, 50, 1280, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(os.path.join(url, "images/how-to-play.png")))
+        self.title.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./how-to-play.png")))
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setObjectName("title")
-        
-        #information
+
+        # information
         self.information = QtWidgets.QLabel(self.centralwidget)
         self.information.setGeometry(QtCore.QRect(0, 160, 1280, 500))
         self.information.setText("")
-        self.information.setPixmap(QtGui.QPixmap(os.path.join(url, "images/game-tutorial.png")))
+        self.information.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./game-tutorial.png")))
         self.information.setAlignment(QtCore.Qt.AlignCenter)
         self.information.setObjectName("information")
-        
-        #play button        
+
+        # play button
         self.playBtn = Button100x100(self.centralwidget)
         self.playBtn.setName("playBtn")
-        self.playBtn.setImage("images/play-btn.png")
+        self.playBtn.setImage(os.path.join(image_folder, "./play-btn.png"))
         self.playBtn.move(QtCore.QPoint(440, 700))
-        self.playBtn.clicked.connect(lambda: self.handleClickPlayButton(MainWindow))
-        
-        #exit button
+        self.playBtn.clicked.connect(
+            lambda: self.handleClickPlayButton(MainWindow))
+
+        # exit button
         self.exitBtn = Button100x100(self.centralwidget)
         self.exitBtn.setName("playBtn")
-        self.exitBtn.setImage("images/exit-btn.png")
+        self.exitBtn.setImage(os.path.join(image_folder, "./exit-btn.png"))
         self.exitBtn.move(QtCore.QPoint(770, 700))
-        self.exitBtn.clicked.connect(lambda: self.handleClickExitButton(MainWindow))
-        
-        #setup
+        self.exitBtn.clicked.connect(
+            lambda: self.handleClickExitButton(MainWindow))
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -62,10 +69,10 @@ class UI_TutorialScreen(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        
+
     def handleClickExitButton(self, MainWindow):
         MainWindow.close()
-        
+
     def handleClickPlayButton(self, MainWindow):
         ui = gui.screen.UI_MainMenu()
         ui.setupUi(MainWindow)

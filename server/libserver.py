@@ -9,18 +9,20 @@ import random
 from import_database import read_correct_answer, read_questions
 from models.player import Player
 
+
 questions_data = read_questions()
 correct_answer_data = read_correct_answer()
 player_data = {
     "cookie": {
-        "player": "admin",
         "name": "username",
         "questions": [1, 2, 3, 4],
         'answers': ["", "", "", ""],
         "ingame": True,
-        "order": 0
+        "score": 0,
+        "win": False
     }
 }
+player_order = []
 
 
 def count_players():
@@ -133,49 +135,72 @@ class Message:
 
         # action get_question
         if action == "get_question":
-            cookie = self.request["value"]
-            player = player_data.get(cookie)
+            req = json.loads(self.request["value"])
+            cookies = req.get("cookie")
+            player = player_data.get(cookies)
             ques = player["questions"]
             query = str(random.randint(1, 121))
             ques.append(query)
-            print(player)
             answer = questions_data.get(query)
             content = {"result": answer}
 
         # action join
         elif action == "join":
-            req = self.request["value"].split('+')
-            username = req[0]
-            cookie = req[1]
+            req = json.loads(self.request.get("value"))
+            username = req["username"]
+            cookies = req["cookie"]
             if not check_username_valid(username) or check_exist_username(username):
-                content = {"result": "no,-1"}
+                content = {
+                    "result": {'accepted': False}}
             else:
-                player = create_new_player(username, cookie)
-                player_data[cookie] = dict(
-                    player=player, name=username, questions=[], answers=[], ingame=True, order=len(player_data))
-                print("total:", len(player_data) - 1, "players")
-                content = {"result": f"yes,{len(player_data) - 1}"}
+                player = create_new_player(username, cookies)
+                if cookies not in player_order:
+                    player_order.append(cookies)
+                print(player_order)
+                player_data[cookies] = dict(
+                    name=username, questions=[], answers=[], ingame=True, score=0, win=False)
+                print("total:", len(player_order), "players")
+                content = {
+                    "result": {'accepted': True, 'order': player_order.index(cookies)+1, 'player': len(player_order)}}
 
         # action answer_question
         elif action == 'answer_question':
-            cookie, num_ques, ans = self.request.get("value").split('+')
+            req = json.loads(self.request.get("value"))
+            cookies = req.get("cookie")
+            num_ques = req.get("num_ques")
+            ans = req.get("answer")
 
-            player = player_data.get(cookie)
+            player = player_data.get(cookies)
             answer = player["answers"]
             answer.append(ans)
             if (correct_answer_data[player.get("questions")[-1]] == ans):
-                content = {"result": "true"}
+                score = player["score"]
+                player["score"] = score + 1
+                content = {"result": True}
             else:
                 player["ingame"] = False
-                content = {"result": "false"}
+                player_order.remove(cookies)
+                content = {"result": False}
 
         # action next_question
         elif action == 'next_question':
-            cookie = self.request.get('value')
-            player = player_data.get(cookie)
+            req = json.loads(self.request.get("value"))
+            cookies = req.get("cookie")
+            player = player_data.get(cookies)
             answer = player["answers"]
             answer.append("NEXT_QUESTION")
-            content = {"result": "true"}
+            content = {"result": True}
+
+        elif action == 'get_status':
+            req = json.loads(self.request["value"])
+            cookies = req.get("cookie")
+            print(cookies)
+            print(player_order)
+            if cookies not in player_order:
+                content = {"result": False}
+            else:
+                content = {"result": {"total_player": len(
+                    player_order), "order": player_order.index(cookies)+1}}
 
         # else
         else:

@@ -15,8 +15,10 @@ from gui.widgets.Answer import Answer
 import os
 import time
 
-url = os.path.dirname("./who-want-to-be-a-millionare/gui/") 
+dirname = os.path.dirname(__file__)
+image_folder = os.path.join(dirname, "../images")
 totalTime = 60
+
 
 class UI_QuestionScreen(object):
     def setupUi(self, MainWindow):
@@ -25,37 +27,40 @@ class UI_QuestionScreen(object):
         MainWindow.setAutoFillBackground(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        
-        #title
+        self.centralwidget.setStyleSheet("background-color: #D9EEF6;")
+
+        # title
         self.title = QtWidgets.QLabel(self.centralwidget)
         self.title.setGeometry(QtCore.QRect(0, 50, 1280, 100))
         self.title.setText("")
-        self.title.setPixmap(QtGui.QPixmap(url + "images/question.png"))
+        self.title.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./question.png")))
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setObjectName("titleInformation")
-        
-        #ok button
+
+        # ok button
         self.okBtn = Button100x100(self.centralwidget)
-        self.okBtn.setImage("images/OK-btn.png")
+        self.okBtn.setImage(os.path.join(image_folder, "./OK-btn.png"))
         self.okBtn.move(590, 690)
         self.okBtn.setName("okBtn")
         self.okBtn.clicked.connect(self.handleClickOKButton)
-        
-        #exit button
+
+        # exit button
         self.exitBtn = Button64x64(self.centralwidget)
-        self.exitBtn.setImage("images/exit-btn.png")
+        self.exitBtn.setImage(os.path.join(image_folder, "./exit-btn.png"))
         self.exitBtn.move(1170, 30)
         self.exitBtn.setName("exitBtn")
-        self.exitBtn.clicked.connect(lambda: self.handleClickExitButton(MainWindow))
-        
-        #pass button
+        self.exitBtn.clicked.connect(
+            lambda: self.handleClickExitButton(MainWindow))
+
+        # pass button
         self.passBtn = Button64x64(self.centralwidget)
-        self.passBtn.setImage("images/pass-btn.png")
+        self.passBtn.setImage(os.path.join(image_folder, "./pass-btn.png"))
         self.passBtn.move(1080, 30)
         self.passBtn.setName("passBtn")
         self.passBtn.clicked.connect(self.handleClickPassButton)
-        
-        #question
+
+        # question
         self.question = QtWidgets.QTextBrowser(self.centralwidget)
         self.question.setGeometry(QtCore.QRect(300, 170, 691, 221))
         self.question.setObjectName("question")
@@ -67,55 +72,60 @@ class UI_QuestionScreen(object):
                                         font-weight: bold; 
                                         background-color: white;''')
         self.question.setText("One more thing, buttons will be generated using for loop; so name value will vary. So I want to attach each name with the button. I have done same thing in Pytk by using for loop and calling the argument base function when clicked.")
-        
-        #choose A
+
+        # choose A
         self.chooseA = Answer(self.centralwidget)
         self.chooseA.move(90, 480)
         self.chooseA.setText("A. hello")
         self.chooseA.setObjectName("chooseA")
         self.chooseA.clicked.connect(self.handleChooseA)
-        
-        #chooseB
+
+        # chooseB
         self.chooseB = Answer(self.centralwidget)
         self.chooseB.move(90, 590)
-        self.chooseB.setText("B. I do not understand why you pass QMouseEvent to the parent constructor, you must pass the parent attribute as shown below")
+        self.chooseB.setText(
+            "B. I do not understand why you pass QMouseEvent to the parent constructor, you must pass the parent attribute as shown below")
         self.chooseB.setObjectName("chooseB")
         self.chooseB.clicked.connect(self.handleChooseB)
-        
-        #choose C
+
+        # choose C
         self.chooseC = Answer(self.centralwidget)
         self.chooseC.move(710, 480)
         self.chooseC.setText("C. hello")
         self.chooseC.setObjectName("chooseC")
         self.chooseC.clicked.connect(self.handleChooseC)
-        
-        #choose D
+
+        # choose D
         self.chooseD = Answer(self.centralwidget)
         self.chooseD.move(710, 590)
         self.chooseD.setText("D. hello")
         self.chooseD.setObjectName("chooseD")
         self.chooseD.clicked.connect(self.handleChooseD)
-        
-        #score
+
+        # score
         self.score = QtWidgets.QLabel(self.centralwidget)
         self.score.setGeometry(QtCore.QRect(20, 20, 100, 42))
         self.score.setText("")
-        self.score.setPixmap(QtGui.QPixmap(os.path.join(url, "images/score.png")))
+        self.score.setPixmap(QtGui.QPixmap(
+            os.path.join(image_folder, "./score.png")))
         self.score.setScaledContents(True)
-        self.score.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.score.setAlignment(QtCore.Qt.AlignLeading |
+                                QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.score.setObjectName("score")
-        
+
         self.inputScore = QtWidgets.QLineEdit(self.centralwidget)
         self.inputScore.setGeometry(QtCore.QRect(140, 20, 101, 40))
         font = QtGui.QFont()
         font.setFamily("Comic Sans MS")
         font.setPointSize(23)
         self.inputScore.setFont(font)
-        self.inputScore.setStyleSheet("background: transparent; color: #FBC02D; border: none;")
-        self.inputScore.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.inputScore.setStyleSheet(
+            "background: transparent; color: #FBC02D; border: none;")
+        self.inputScore.setAlignment(
+            QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.inputScore.setObjectName("inputScore")
-        
-        #timer
+
+        # timer
         self.countdownTimer = QtWidgets.QProgressBar(self.centralwidget)
         self.countdownTimer.setGeometry(QtCore.QRect(20, 80, 221, 23))
         self.countdownTimer.setAutoFillBackground(False)
@@ -135,113 +145,112 @@ class UI_QuestionScreen(object):
         self.countdownTimer.setProperty("value", 0)
         self.countdownTimer.setTextVisible(False)
         self.countdownTimer.setObjectName("countdownTimer")
-        
+
         self.setDurationTime()
-        
+
         self.timer = QtCore.QTimer(self.centralwidget)
         self.timer.timeout.connect(self.runCountdown)
         self.timer.start(1000)
-        
-        #result
+
+        # result
         self.result = QtWidgets.QLabel(self.centralwidget)
         self.result.setGeometry(QtCore.QRect(0, 250, 1280, 400))
         self.result.setText("")
         self.result.setAlignment(QtCore.Qt.AlignCenter)
         self.result.setObjectName("result")
         self.result.hide()
-        
-        #setup
+
+        # setup
         MainWindow.setCentralWidget(self.centralwidget)
-        
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.inputScore.setText(_translate("MainWindow", "100"))
-        
-    #pass button or not
+
+    # pass button or not
     def isPassLeft(self, isPass):
         if (isPass):
             self.passBtn.show()
         else:
             print("hello")
             self.passBtn.hide()
-        
-    #main player or not: isMain to check main player or not, isPass to check pass button
+
+    # main player or not: isMain to check main player or not, isPass to check pass button
     def isMainPlayer(self, isMain, isPass):
         if (isMain):
             self.okBtn.show()
             self.isPassLeft(isPass)
-        else: 
+        else:
             print("hello")
             self.okBtn.hide()
             self.passBtn.hide()
-            
-    #show result
+
+    # show result
     def showResult(self, result):
-        if result: 
-            self.result.setPixmap(QtGui.QPixmap(os.path.join(url, "images/correct.png")))
+        if result:
+            self.result.setPixmap(QtGui.QPixmap(
+                os.path.join(image_folder, "./correct.png")))
             self.result.show()
         else:
-            self.result.setPixmap(QtGui.QPixmap(os.path.join(url, "images/wrong.png")))
+            self.result.setPixmap(QtGui.QPixmap(
+                os.path.join(image_folder, "./wrong.png")))
             self.result.show()
 
+    # click button
 
-    #click button
     def handleClickPassButton(self):
         self.timer.stop()
         print("Pass!")
-        
+
     def handleClickExitButton(self, MainWindow):
         MainWindow.close()
-        
+
     def handleClickOKButton(self):
         self.timer.stop()
-        #checkResult --> result = checkResult
+        # checkResult --> result = checkResult
         result = True
         self.showResult(result)
-    
-    #score    
+
+    # score
     def setScore(self, score):
         self.inputScore.setText(score)
-        
-    #time   
+
+    # time
     def setDurationTime(self):
         self.time_left_int = totalTime
-        
+
     def runCountdown(self):
         self.time_left_int -= 1
         print(self.time_left_int)
         self.countdownTimer.setValue(totalTime - self.time_left_int)
         if self.time_left_int == 0:
             self.timer.stop()
-        
-    #answer
+
+    # answer
     def handleChooseA(self):
         self.chooseA.isChoose(True)
         self.chooseB.isChoose(False)
         self.chooseC.isChoose(False)
         self.chooseD.isChoose(False)
-        
+
     def handleChooseB(self):
         self.chooseA.isChoose(False)
         self.chooseB.isChoose(True)
         self.chooseC.isChoose(False)
         self.chooseD.isChoose(False)
-        
+
     def handleChooseC(self):
         self.chooseA.isChoose(False)
         self.chooseB.isChoose(False)
         self.chooseC.isChoose(True)
         self.chooseD.isChoose(False)
-        
+
     def handleChooseD(self):
         self.chooseA.isChoose(False)
         self.chooseB.isChoose(False)
         self.chooseC.isChoose(False)
         self.chooseD.isChoose(True)
-        
-    

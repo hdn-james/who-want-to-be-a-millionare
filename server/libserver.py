@@ -19,7 +19,8 @@ player_data = {
         'answers': ["", "", "", ""],
         "ingame": True,
         "score": 0,
-        "win": False
+        "win": False,
+        "isPass": False
     }
 }
 player_order = []
@@ -158,7 +159,7 @@ class Message:
                     player_order.append(cookies)
                 print(player_order)
                 player_data[cookies] = dict(
-                    name=username, questions=[], answers=[], ingame=True, score=0, win=False)
+                    name=username, questions=[], answers=[], ingame=True, score=0, win=False, isPass=False)
                 print("total:", len(player_order), "players")
                 content = {
                     "result": {'accepted': True, 'order': player_order.index(cookies)+1, 'player': len(player_order)}}
@@ -167,40 +168,62 @@ class Message:
         elif action == 'answer_question':
             req = json.loads(self.request.get("value"))
             cookies = req.get("cookie")
-            num_ques = req.get("num_ques")
             ans = req.get("answer")
 
             player = player_data.get(cookies)
+            score = player.get("score")
+            player["score"] = score + 1
             answer = player["answers"]
             answer.append(ans)
             if (correct_answer_data[player.get("questions")[-1]] == ans):
                 score = player["score"]
                 player["score"] = score + 1
-                content = {"result": True}
+                player_order.append(player_order.pop(0))
+                content = {"result": {"correct": True, "score": player.get("score")}}
             else:
                 player["ingame"] = False
                 player_order.remove(cookies)
-                content = {"result": False}
+                content = {"result": {"correct":False}}
 
         # action next_question
         elif action == 'next_question':
             req = json.loads(self.request.get("value"))
             cookies = req.get("cookie")
             player = player_data.get(cookies)
+            player["isPass"]=True
+            score = player.get("score")
+            player["score"] = score + 1
             answer = player["answers"]
             answer.append("NEXT_QUESTION")
-            content = {"result": True}
+            player_order.append(player_order.pop(0))
+            content = {"result": {"correct": True, "score": player.get("score")}}
 
         elif action == 'get_status':
             req = json.loads(self.request["value"])
             cookies = req.get("cookie")
-            print(cookies)
-            print(player_order)
+            player = player_data.get(cookies)
+            score = player.get("score")
             if cookies not in player_order:
                 content = {"result": False}
             else:
-                content = {"result": {"total_player": len(
-                    player_order), "order": player_order.index(cookies)+1}}
+                if cookies in player_order and cookies == player_order[0]:
+                    content = {"result": {"total_player": len(
+                        player_order), "order": player_order.index(cookies)+1, "turn": True, "score": score, "ispass": player.get("isPass")}}
+                else:
+                    content = {"result": {"total_player": len(
+                        player_order), "order": player_order.index(cookies)+1, "turn": False, "score": score, "ispass": player.get("isPass")}}
+        elif action == 'get_leaderboard':
+            req = json.loads(self.request["value"])
+            all_player_data = player_data.values()
+            leaderboard = []
+            for player in all_player_data:
+                name = player.get("name")
+                userscore = player.get("score")
+                leaderboard.append([name,str(userscore)])
+            leaderboard.sort(key=lambda x: x[1], reverse=True)
+            for i in range(len(leaderboard)):
+                leaderboard[i].insert(0,str(i+1))
+            content={"result":leaderboard}
 
         # else
         else:
